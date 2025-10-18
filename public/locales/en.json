@@ -100,5 +100,177 @@
   "apiDocumentation": "API Documentation",
   "fees": "Fees",
   "legal": "Legal",
-  "allRightsReserved": "All rights reserved."
+  "allRightsReserved": "All rights reserved.",
+
+    "heading": "Start Trading Now",
+    "description": "Join millions of traders worldwide and start your crypto journey today. Sign up in minutes and get access to 350+ cryptocurrencies.",
+    "createAccount": "Create Free Account",
+    "learnMore": "Learn More",
+    "bankSecurity": "Bank-level Security",
+    "users": "120M+ Users",
+    "industryLeader": "Industry Leader",
+  "cta": {
+    "heading": "Start Trading Now",
+    "description": "Join millions of traders worldwide and start your crypto journey today. Sign up in minutes and get access to 350+ cryptocurrencies.",
+    "createAccount": "Create Free Account",
+    "learnMore": "Learn More",
+    "bankSecurity": "Bank-level Security",
+    "users": "120M+ Users",
+    "industryLeader": "Industry Leader"
+  },
+  "faq": {
+    "heading": "Frequently Asked Questions",
+    "subheading": "Everything you need to know about SCLight Exchange",
+    "items": [
+      {
+        "question": "What is a cryptocurrency exchange?",
+        "answer": "A cryptocurrency exchange is a digital marketplace where traders can buy, sell, and exchange cryptocurrencies. SCLight Exchange is the world's largest cryptocurrency exchange by trading volume, offering spot trading, futures, staking, and more."
+      },
+      {
+        "question": "What products does SCLight Exchange provide?",
+        "answer": "SCLight Exchange offers a comprehensive suite of products including Spot Trading, Futures Trading, Margin Trading, Savings & Staking, NFT Marketplace, SCLight Exchange Pay, SCLight Exchange Card, and educational resources through SCLight Exchange Academy."
+      },
+      {
+        "question": "How to buy Bitcoin and other cryptocurrencies on SCLight Exchange",
+        "answer": "You can buy crypto on SCLight Exchange using credit/debit cards, bank transfers, P2P trading, or third-party payment channels. Simply create an account, complete verification, deposit funds, and start trading."
+      },
+      {
+        "question": "How to track cryptocurrency prices",
+        "answer": "SCLight Exchange provides real-time price tracking through our website and mobile app. You can view live charts, set price alerts, analyze market trends, and access historical data for all listed cryptocurrencies."
+      },
+      {
+        "question": "How to trade cryptocurrencies on SCLight Exchange",
+        "answer": "After funding your account, navigate to the trading interface, select your trading pair, choose between market or limit orders, enter your amount, and execute the trade. We offer spot, margin, and futures trading options."
+      },
+      {
+        "question": "How to earn from crypto on SCLight Exchange",
+        "answer": "SCLight Exchange offers multiple earning opportunities: Flexible Savings (earn interest on idle assets), Locked Staking (higher APY for locked periods), Launchpool (farm new tokens), and Liquidity Farming."
+      }
+    ]
+  },
+  "mobileApp": {
+    "heading1": "Trade on the go.",
+    "heading2": "Anywhere, anytime.",
+    "description": "Download the SCLight Exchange app and access your portfolio, trade crypto, and manage your account from anywhere in the world.",
+    "scanToDownload": "Scan to Download App",
+    "iosAndroid": "iOS and Android",
+    "rating": "4.8 Rating",
+    "downloads": "50M+ Downloads",
+    "availableOnDesktop": "Available on desktop",
+    "moreDownloadOptions": "More Download Options",
+    "cryptoData": [
+      { "name": "BTC", "fullName": "Bitcoin" },
+      { "name": "ETH", "fullName": "Ethereum" },
+      { "name": "BNB", "fullName": "BNB" },
+      { "name": "XRP", "fullName": "XRP" },
+      { "name": "SOL", "fullName": "Solana" },
+      { "name": "ADA", "fullName": "Cardano" }
+    ],
+    "platforms": [
+      { "name": "MacOS" },
+      { "name": "Windows" },
+      { "name": "Linux" }
+    ]
+  },
+  "hero": {
+    "marketUp": "Market is up 12% today",
+    "slides": [
+      {
+        "title": "Trade Bitcoin, ETH, and 350+ cryptocurrencies",
+        "subtitle": "Fast, secure, and trusted by millions worldwide"
+      },
+      {
+        "title": "Earn up to 8% APY on your crypto",
+        "subtitle": "Flexible savings with daily interest payouts"
+      },
+      {
+        "title": "Start trading with as little as $10",
+        "subtitle": "Join the future of finance today"
+      }
+    ],
+    "estimatedBalance": "Your Estimated Balance",
+    "todayPL": "Today's P/L:",
+    "getStarted": "Get Started Now",
+    "watchTutorial": "Watch Tutorial",
+    "secureTrusted": "Secure & Trusted",
+    "safuProtected": "SAFU Protected",
+    "tabs": {
+      "popular": "Popular",
+      "gainers": "Gainers",
+      "news": "News"
+    },
+    "defaultCrypto": [
+      { "name": "Bitcoin", "symbol": "BTC" },
+      { "name": "Ethereum", "symbol": "ETH" },
+      { "name": "Cardano", "symbol": "ADA" },
+      { "name": "Solana", "symbol": "SOL" }
+    ],
+    "defaultNews": [
+      { "title": "Bitcoin reaches new ATH", "time": "2h ago" },
+      { "title": "Ethereum 2.0 update released", "time": "5h ago" },
+      { "title": "DeFi market grows 40%", "time": "8h ago" }
+    ]
+  },
+  "features": {
+    "heading": "Why Choose SCLight Exchange?",
+    "subheading": "The world's leading cryptocurrency platform trusted by millions",
+    "items": [
+      {
+        "title": "Secure & Reliable",
+        "description": "Industry-leading security practices with multi-tier & multi-cluster system architecture"
+      },
+      {
+        "title": "Fast Transactions",
+        "description": "Lightning-fast order execution with high-performance matching engine"
+      },
+      {
+        "title": "120M+ Users",
+        "description": "Join millions of traders worldwide in the largest crypto ecosystem"
+      },
+      {
+        "title": "Award Winning",
+        "description": "Recognized globally as the world's leading cryptocurrency exchange"
+      }
+    ]
+  },
+  "stats": {
+    "items": [
+      {
+        "label": "Registered Users"
+      },
+      {
+        "label": "24h Trading Volume"
+      },
+      {
+        "label": "Cryptocurrencies Listed"
+      },
+      {
+        "label": "Countries Supported"
+      }
+    ]
+  },
+  "testimonials": {
+    "heading": "Trusted by Traders Worldwide",
+    "subheading": "See what our users have to say",
+    "items": [
+      {
+        "name": "Sarah Johnson",
+        "role": "Day Trader",
+        "quote": "SCLight Exchange has been my go-to platform for 3 years. The liquidity and speed are unmatched!",
+        "rating": 5
+      },
+      {
+        "name": "Michael Chen",
+        "role": "Crypto Investor",
+        "quote": "Best security features and customer support in the industry. Highly recommended!",
+        "rating": 5
+      },
+      {
+        "name": "Emma Davis",
+        "role": "DeFi Enthusiast",
+        "quote": "The variety of DeFi products and earning options makes SCLight Exchange stand out from competitors.",
+        "rating": 5
+      }
+    ]
+  }
 }
