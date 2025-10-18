@@ -5,6 +5,7 @@ import SpotTradingPage from "../pages/trading-pages/spot-trading-page";
 import SignInPage from "../pages/auth-pages/signin-page";
 import SignUpPage from "../pages/auth-pages/signup-page";
 import LandingPage from "../pages/landing-page";
+import Demo from "../components/demo";
 
 const RoutesPage = () => {
   return (
@@ -25,6 +26,8 @@ const RoutesPage = () => {
       <Route path="/trade/*" element={<MainLayout />}>
         <Route path="spot" element={<SpotTradingPage />} />
       </Route>
+
+      <Route path="/Demo" element={<Demo />} />
     </Routes>
   );
 };

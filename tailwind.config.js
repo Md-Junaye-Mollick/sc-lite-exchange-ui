@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class", "dark", "dim"], // Ensures dark and dim classes are enabled
+  darkMode: ["class", "dark", "dim"],
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
@@ -9,73 +9,55 @@ module.exports = {
         "text-color": "#ffffff",
         "text-color-dark": "#f1f1f1",
         "text-color-dim": "#ffffff",
-
-        // New color for secondary descriptions
-        "text-secondary-desc": "#718096", // Default light grey
-        "text-secondary-desc-dark": "#a0aec0", // Darker theme grey
-        "text-secondary-desc-dim": "#a0aec0", // Dim theme grey
-
+        "text-secondary-desc": "#718096",
+        "text-secondary-desc-dark": "#a0aec0",
+        "text-secondary-desc-dim": "#a0aec0",
         // Dispute/contrast colors
         "dispute-color": "#000000",
         "dispute-color-dark": "#f5f5f5",
         "dispute-color-dim": "#ffffff",
-
         // Card backgrounds
         card: "#ffffff",
         "card-dark": "#0b0b0b",
         "card-dim": "#020610",
-
-        // Sub-card backgrounds
         "sub-card": "#f8f9fa",
         "sub-card-dark": "#1a1a1a",
         "sub-card-dim": "#0a1a2e",
-
         // Border colors
         "custom-border": "#e9ecef",
         "custom-border-dark": "#2a2a2a",
         "custom-border-dim": "#1a2e42",
-
         // Pre/code backgrounds
         "pre-bg": "#fbfcfd",
         "pre-bg-dark": "#111111",
         "pre-bg-dim": "#0a1528",
-
-        // Gradient colors (NOW BLUE-LIKE)
-        "gradient-start": "#3498db", // Base blue gradient start
-        "gradient-end": "#2980b9", // Base blue gradient end
-        "gradient-start-dark": "#3498db", // Dark theme uses same blue gradient
-        "gradient-end-dark": "#2980b9",
-        "gradient-start-dim": "#3498db", // Dim theme uses same blue gradient
-        "gradient-end-dim": "#2980b9",
-
-        // Accent colors (NOW BLUE-LIKE)
-        accent: "#3498db", // Primary Accent color (Blue)
-        "accent-dark": "#3498db", // Dark theme uses same accent
-        "accent-dim": "#3498db", // Dim theme uses same accent
-
+        // Gradient colors (YELLOW THEME)
+        "gradient-start": "#fbbf24", // yellow-400
+        "gradient-end": "#f59e0b", // yellow-600
+        "gradient-start-dark": "#fbbf24",
+        "gradient-end-dark": "#f59e0b",
+        "gradient-start-dim": "#fbbf24",
+        "gradient-end-dim": "#f59e0b",
+        // Accent colors (YELLOW THEME)
+        accent: "#eab308", // yellow-500
+        "accent-dark": "#eab308",
+        "accent-dim": "#eab308",
         // Background colors
         "bg-primary": "#ffffff",
         "bg-primary-dark": "#000000",
         "bg-primary-dim": "#020610",
-
         "bg-secondary": "#f8f9fa",
         "bg-secondary-dark": "#121212",
         "bg-secondary-dim": "#040812",
       },
-
       backgroundImage: {
-        "gradient-teal": "linear-gradient(135deg, #3498db 0%, #2980b9 100%)",
-        "gradient-teal-hover":
-          "linear-gradient(135deg, #4da6e9 0%, #3a96d1 100%)",
-        "gradient-green-dim":
-          "linear-gradient(135deg, #3498db 0%, #2980b9 100%)",
+        "gradient-yellow": "linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)",
+        "gradient-yellow-hover": "linear-gradient(135deg, #fcd34d 0%, #fbbf24 100%)",
+        "text-gradient": "linear-gradient(to right, #fbbf24, #eab308, #f97316)", // yellow to orange
       },
-
       boxShadow: {
-        // Updated glow to use rgba of the new blue accent
-        glow: "0 0 20px rgba(52, 152, 219, 0.3)", // Glow effect with new blue
-        "glow-hover": "0 0 30px rgba(52, 152, 219, 0.5)", // Increased glow on hover
-        "glow-green": "0 0 20px rgba(52, 152, 219, 0.2)", // Slightly softer blue glow
+        glow: "0 0 20px rgba(234, 179, 8, 0.3)",
+        "glow-hover": "0 0 30px rgba(234, 179, 8, 0.5)",
       },
     },
   },

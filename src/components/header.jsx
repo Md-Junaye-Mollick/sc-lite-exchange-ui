@@ -199,7 +199,7 @@ const Header = () => {
               alt={t("appName")}
               className="w-8 h-8 object-contain"
             />
-            <span className="text-lg font-bold text-accent hidden sm:inline">
+            <span className="text-lg font-bold text-gradient hidden sm:inline">
               {t("appName")}
             </span>
           </a>
@@ -278,7 +278,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-2 ml-4">
             <a
               href="/signin"
-              className="px-4 py-2 rounded-xl bg-accent text-white hover:bg-gradient-teal-hover btn-transition text-sm font-medium shadow-glow hover:shadow-glow-hover"
+              className="px-4 py-2 rounded-xl bg-gradient text-white hover:bg-gradient-teal-hover btn-transition text-sm font-medium shadow-glow hover:shadow-glow-hover"
             >
               {t("login")}
             </a>
