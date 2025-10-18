@@ -23,7 +23,7 @@ const SignInPage = () => {
 
       if (email === "test@example.com" && password === "password123") {
         console.log("Sign In Successful!", { email });
-        navigate("/trade/spot");
+        navigate("/landing");
       } else {
         setError(t("signInError"));
       }
