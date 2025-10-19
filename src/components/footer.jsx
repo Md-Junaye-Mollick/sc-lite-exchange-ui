@@ -79,7 +79,7 @@ const Footer = () => {
         <div className="border-t border-custom-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-3">
-              <div className="w-7 h-7 bg-gradient rounded-full flex items-center justify-center">
+              <div className="w-7 h-7 rounded-full flex items-center justify-center">
                 <img src="/images/logo.png" alt="" />
               </div>
               <span className="text-sm text-secondary-desc">{t('footer.copyright')}</span>
