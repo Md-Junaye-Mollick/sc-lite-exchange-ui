@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { BarChart3, Bitcoin, Globe, Users } from 'lucide-react';
 
 const AnimatedCounter = ({ end, suffix = "", prefix = "" }) => {
@@ -39,30 +40,32 @@ const AnimatedCounter = ({ end, suffix = "", prefix = "" }) => {
 };
 
 const StatsSection = () => {
-  const stats = [
-    { value: 120, suffix: "M+", label: "Registered Users", icon: Users },
-    { value: 76, suffix: "B", label: "24h Trading Volume", icon: BarChart3, prefix: "$" },
-    { value: 350, suffix: "+", label: "Cryptocurrencies Listed", icon: Bitcoin },
-    { value: 180, suffix: "+", label: "Countries Supported", icon: Globe },
-  ];
+  const { t } = useTranslation();
+  
+  const statsData = t('stats.items', { returnObjects: true }) || [];
 
   return (
-    <section className="py-16 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm">
+    <section className="bg-sub-card border-b border-t border-custom-border py-12 sm:py-16 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((stat, idx) => (
-            <div key={idx} className="text-center group cursor-pointer transform hover:scale-110 transition-all duration-300">
-              <div className="flex justify-center mb-4">
-                <div className="p-4 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-2xl group-hover:from-yellow-500/30 group-hover:to-orange-500/30 transition-all duration-300">
-                  <stat.icon className="w-8 h-8 text-yellow-500" />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+          {statsData.map((stat, idx) => {
+            const icons = [Users, BarChart3, Bitcoin, Globe];
+            const Icon = icons[idx];
+            
+            return (
+              <div key={idx} className="text-center group cursor-pointer transform hover:scale-110 transition-all duration-300">
+                <div className="flex justify-center mb-3 sm:mb-4">
+                  <div className="p-3 sm:p-4 bg-gradient-to-br from-accent/20 to-accent/10 rounded-xl sm:rounded-2xl group-hover:from-accent/30 group-hover:to-accent/20 transition-all duration-300">
+                    <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-accent" />
+                  </div>
                 </div>
+                <p className="text-3xl sm:text-4xl font-bold text-gradient mb-1 sm:mb-2">
+                  <AnimatedCounter end={stat.value} suffix={stat.suffix} prefix={stat.prefix || ""} />
+                </p>
+                <p className="text-secondary-desc text-sm sm:text-base">{stat.label}</p>
               </div>
-              <p className="text-4xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-2">
-                <AnimatedCounter end={stat.value} suffix={stat.suffix} prefix={stat.prefix || ""} />
-              </p>
-              <p className="text-gray-400">{stat.label}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

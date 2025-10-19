@@ -143,7 +143,7 @@ const SignInPage = () => {
           {/* Sign In Button */}
           <button
             type="submit"
-            className="w-full flex items-center justify-center px-6 py-3 rounded-xl bg-accent text-white font-semibold text-lg hover:bg-gradient-teal-hover btn-transition shadow-glow hover:shadow-glow-hover disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full flex items-center justify-center px-6 py-3 rounded-xl bg-gradient text-white font-semibold text-lg hover:bg-gradient-teal-hover btn-transition shadow-glow hover:shadow-glow-hover disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={loading}
           >
             {loading ? (

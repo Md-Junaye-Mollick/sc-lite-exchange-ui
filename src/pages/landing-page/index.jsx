@@ -15,8 +15,8 @@ const LandingPage = () => {
       <FeaturesSection/>
       <Testimonials/>
       <MobileApp/>
-        <FAQ/>
-        <CTA/>
+      <FAQ/>
+      <CTA/>
     </>
   );
 };

@@ -236,15 +236,27 @@
   "stats": {
     "items": [
       {
+        "value": 120,
+        "suffix": "M+",
+        "prefix": "",
         "label": "Registered Users"
       },
       {
+        "value": 76,
+        "suffix": "B",
+        "prefix": "$",
         "label": "24h Trading Volume"
       },
       {
+        "value": 350,
+        "suffix": "+",
+        "prefix": "",
         "label": "Cryptocurrencies Listed"
       },
       {
+        "value": 180,
+        "suffix": "+",
+        "prefix": "",
         "label": "Countries Supported"
       }
     ]
@@ -272,5 +284,37 @@
         "rating": 5
       }
     ]
+  },
+  
+  "footer": {
+    "community": "Community",
+    "aboutUs": "About Us",
+    "products": "Products",
+    "business": "Business",
+    "support": "Support",
+
+    "communityLinks": ["Twitter", "Telegram", "Discord", "Instagram"],
+    "aboutLinks": ["About", "Careers", "Announcements", "News", "Press", "Legal"],
+    "productLinks": ["Exchange", "Buy Crypto", "Pay", "Academy", "Live", "NFT"],
+    "businessLinks": [
+      "P2P Merchant",
+      "P2P Merchant Application",
+      "Listing Application",
+      "Institutional & VIP",
+      "Labs"
+    ],
+    "supportLinks": [
+      "24/7 Chat Support",
+      "Support Center",
+      "Product Feedback",
+      "Fees",
+      "Trading Rules",
+      "SCLight Exchange Verify"
+    ],
+
+    "copyright": "© 2025 SCLight Exchange. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookie": "Cookie Preferences"
   }
 }
