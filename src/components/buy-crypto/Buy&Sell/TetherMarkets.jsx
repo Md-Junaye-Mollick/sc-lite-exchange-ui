@@ -33,7 +33,7 @@ const TetherMarkets = () => {
   return (
     <section className="py-16 bg-pre-bg">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <h2 className="text-3xl font-bold text-gradient py-4 text-center sm:text-left">
+        <h2 className="w-fit text-3xl font-bold text-gradient py-4 text-center sm:text-left">
           {t('tetherMarkets.title')}
         </h2>
 

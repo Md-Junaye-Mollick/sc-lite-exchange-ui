@@ -57,7 +57,7 @@
   "demoTrading": "Demo Trading",
   "demoTradingDesc": "Use virtual funds to experience real trading scenarios",
   "dex": "DEX Beta",
-  "dexDesc": "On-chain trading with Binance Wallet",
+  "dexDesc": "On-chain trading with SC-LITE Wallet",
   "alpha": "Alpha",
   "alphaDesc": "Quick access to Web3 via Alpha Trading",
   "tradingBots": "Trading Bots",
@@ -419,5 +419,167 @@
       "terms": "Terms of Service",
       "apply": "apply."
     }
+  },
+
+  "deposit": {
+    "title": "Deposit AED",
+    "currency": "Currency",
+    "payWith": "Pay With",
+    "p2pExpress": "P2P Express",
+    "buyOnBinance": "Buy on SC-LITE P2P",
+    "continue": "Continue",
+    "search": "Search",
+    "recommended": "Recommended",
+    "allCurrencies": "All Currencies",
+    "faq": "FAQ",
+    "currencies": [
+      { "code": "AED", "name": "United Arab Emirates dirham" },
+      { "code": "AMD", "name": "Armenian Dram" },
+      { "code": "AUD", "name": "Australian Dollar" },
+      { "code": "AZN", "name": "Azerbaijani Manat" },
+      { "code": "INR", "name": "Indian Rupee" }
+    ],
+    "faqList": [
+      { 
+        "id": 1, 
+        "question": "What is P2P exchange?",
+        "answer": "P2P stands for peer-to-peer, and P2P exchanges are platforms that allow users to buy and sell crypto for fiat currency directly with other users.",
+        "isExternal": false
+      },
+      { 
+        "id": 2, 
+        "question": "How do I buy Bitcoin locally on SC-LITE P2P?",
+        "answer": "After you complete identity verification and add your payment methods, you are ready to buy crypto on SC-LITE P2P platform. First, choose from all the available offers in the marketplace. Second, place an order to buy your crypto, and pay the seller based on the preferred payment methods. Lastly, get your crypto from the seller after you complete the fiat transaction and confirm your payment on SC-LITE P2P.",
+        "isExternal": false
+      },
+      { 
+        "id": 3, 
+        "question": "Learn more about What is P2P Trading and How Does a Local Bitcoin Exchange Work?",
+        "isExternal": true
+      }
+    ]
+  },
+  
+  "whyFcLite": {
+    "title": "Why SC-LITE",
+    "accessible": {
+      "title": "Accessible",
+      "description": "Start crypto trading by depositing from 35 available fiat currencies."
+    },
+    "convenient": {
+      "title": "Convenient",
+      "description": "Transact seamlessly with 32 available payment methods."
+    },
+    "lowCost": {
+      "title": "Low-Cost",
+      "description": "Enjoy advantageous pricing with competitive rates, low fees, and stable conversion rates."
+    },
+    "safeSecure": {
+      "title": "Safe and Secure",
+      "description": "Protect and secure your assets anytime, anywhere."
+    }
+  },
+  "cryptoPairs": {
+    "title": "Top Crypto-Fiat Pairs",
+    "subtitle": "Deposit Local Fiat Currencies to Buy Crypto.",
+    "noRecords": "No Records",
+    "buyCrypto": "Buy Crypto"
+  },
+  "overview": {
+    "hot": {
+      "title": "Hot"
+    },
+    "new": {
+      "title": "New"
+    },
+    "topGainer": {
+      "title": "Top Gainer"
+    },
+    "topVolume": {
+      "title": "Top Volume"
+    },
+    "more": "More"
+  },
+
+  "cryptos": {
+    "title": "Top Tokens by Market Capitalization",
+    "description": "Get a comprehensive snapshot of all cryptocurrencies available on SC-LITE. This page displays the latest prices, 24-hour trading volume, price changes, and market capitalizations for all cryptocurrencies on SC-LITE. Users can quickly access key information about these digital assets and access the trade page from here.",
+    "name": "Name",
+    "price": "Price",
+    "change24h": "24h Change",
+    "volume24h": "24h Volume",
+    "marketCap": "Market Cap",
+    "loading": "Loading..."
+  },
+
+  "spot": {
+    "title": "0 MARKET FEE",
+    "fee": "0 FEE",
+    "pair": "Pair",
+    "price": "Price",
+    "change": "Change",
+    "high": "24h High",
+    "low": "24h Low",
+    "volume": "24h Volume",
+    "marketCap": "Market Cap",
+    "actions": "Actions",
+    "createScreener": "Create Screener",
+    "all": "All",
+    "usdc": "USDC",
+    "usdt": "USDT",
+    "fdusd": "FDUSD",
+    "bnb": "BNB",
+    "btc": "BTC",
+    "alts": "ALTS",
+    "pat": "PAT",
+    "search": "Search pairs...",
+    "loading": "Loading...",
+    "noResults": "No results found",
+    "favorite": "Add to favorites",
+    "unfavorite": "Remove from favorites"
+  },
+
+  "marketsfutures": {
+    "alert": "Favourites can only be edited with a Futures Trade account.",
+    "openNow": "Open Now >>",
+    "name": "Name",
+    "price": "Price",
+    "change24h": "24h Change",
+    "high24h": "24h High",
+    "low24h": "24h Low",
+    "volume24h": "24h Volume",
+    "turnover24h": "24h Turnover",
+    "actions": "Actions",
+    "loading": "Loading...",
+    "perpetual": "Perpetual"
+  },
+
+  "marketsalpha": {
+    "name": "Name",
+    "price": "Price",
+    "change": "Change",
+    "volume24h": "24h Volume",
+    "marketCap": "Market Cap",
+    "actions": "Actions",
+    "loading": "Loading..."
+  },
+
+  "new": {
+    "name": "Name",
+    "price": "Price",
+    "change": "24h",
+    "volume24h": "24h Volume",
+    "marketCap": "Market Cap",
+    "dateListed": "Date Listed",
+    "actions": "Actions",
+    "loading": "Loading..."
+  },
+
+  "zones": {
+    "loading": "Loading...",
+    "name": "Name",
+    "tradingVolume": "Trading Volume / Change",
+    "marketCap": "Market Cap / Change",
+    "topGainer": "Top Gainer / 24h Change"
   }
 }

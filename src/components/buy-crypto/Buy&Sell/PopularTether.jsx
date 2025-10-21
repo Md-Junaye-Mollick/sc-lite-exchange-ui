@@ -20,7 +20,7 @@ const PopularTether = () => {
     <section className="py-16 bg-pre-bg">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="mb-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gradient mb-3">
+          <h2 className="w-fit text-3xl sm:text-4xl font-bold text-gradient mb-3">
             {t('popularTether.title')}
           </h2>
           <p className="text-secondary-desc">{t('popularTether.subtitle')}</p>

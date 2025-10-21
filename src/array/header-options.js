@@ -19,33 +19,6 @@ export const getNavItems = (t, {
   {
     name: t("markets"),
     path: "/markets",
-    dropdown: {
-      basic: [
-        {
-          name: t("spotMarkets"),
-          description: t("spotMarketsDesc"),
-          icon: BarChart2,
-          iconColor: "#10b981",
-          path: "/markets/spot",
-        },
-        {
-          name: t("futuresMarkets"),
-          description: t("futuresMarketsDesc"),
-          icon: TrendingUp,
-          iconColor: "#ef4444",
-          path: "/markets/futures",
-        },
-      ],
-      advanced: [
-        {
-          name: t("defiMarkets"),
-          description: t("defiMarketsDesc"),
-          icon: LinkIcon,
-          iconColor: "#a855f7",
-          path: "/markets/defi",
-        },
-      ],
-    },
   },
   {
     name: t("trade"),

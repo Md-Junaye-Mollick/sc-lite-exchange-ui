@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router";
 import MainLayout from "../components/layouts/main-layout";
 import LandingPage from "../pages/landing-page";
 import BuyCrypto from "../pages/buy-crypto";
+import Markets from "../pages/market-page";
 import SpotTradingPage from "../pages/trading-pages/spot-trading-page";
 import SignInPage from "../pages/auth-pages/signin-page";
 import SignUpPage from "../pages/auth-pages/signup-page";
@@ -24,6 +25,11 @@ const RoutesPage = () => {
       {/* Buy Crypto Page */}
       <Route path="/buy-crypto" element={<MainLayout />}>
         <Route index element={<BuyCrypto />} />
+      </Route>
+
+      {/* Markets Page */}
+      <Route path="/markets" element={<MainLayout />}>
+        <Route index element={<Markets />} />
       </Route>
       
       {/* Trading pages */}

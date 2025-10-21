@@ -193,7 +193,7 @@ const Header = () => {
     <header className="bg-card text-dispute-color border-b border-custom-border p-2 px-4 sticky top-0 z-50 text-sm">
       <div className=" w-full flex justify-between items-center h-12">
         <div className="flex items-center space-x-6">
-          <a href="/" className="flex items-center space-x-2">
+          <a href="/landing" className="flex items-center space-x-2">
             <img
               src="/images/logo.png"
               alt={t("appName")}

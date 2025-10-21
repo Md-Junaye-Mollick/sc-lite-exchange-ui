@@ -154,7 +154,7 @@ const BuySellHero = () => {
                                     setShowFiatDropdown(false);
                                     setFiatSearch('');
                                   }}
-                                  className="w-full flex items-center gap-3 p-3 transition-colors hover:bg-pre-bg"
+                                  className="w-full flex items-center gap-3 p-3 transition-colors"
                                 >
                                   <span className="text-2xl w-8">{currency.icon}</span>
                                   <div className="text-left">
@@ -216,7 +216,7 @@ const BuySellHero = () => {
                                     setShowCryptoDropdown(false);
                                     setCryptoSearch('');
                                   }}
-                                  className="w-full flex items-center justify-between p-3 transition-colors hover:bg-pre-bg"
+                                  className="w-full flex items-center justify-between p-3 transition-colors"
                                 >
                                   <div className="flex items-center gap-3">
                                     <span className="text-2xl w-8">{crypto.icon}</span>
