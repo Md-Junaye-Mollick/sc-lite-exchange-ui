@@ -185,7 +185,7 @@ export const getNavItems = (t, {
           description: t("aboutUsDesc"),
           icon: BriefcaseBusiness,
           iconColor: "#e879f9",
-          path: "/about",
+          path: "/AboutUs",
         },
         {
           name: t("security"),

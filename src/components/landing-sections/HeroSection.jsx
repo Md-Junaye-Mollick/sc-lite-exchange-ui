@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight, Play, Shield, TrendingUp, Lock, TrendingDown } from 'lucide-react';
+import VideoTutorialPopup from '../models/VideoTutorialPopup/VideoTutorialPopup';
+
 
 const CryptoPanel = ({ cryptoData, newsItems, activeTab, setActiveTab }) => {
   const { t } = useTranslation();
@@ -80,6 +82,7 @@ const HeroSection = ({ cryptoData, newsItems }) => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('popular');
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isVideoPopupOpen, setIsVideoPopupOpen] = useState(false);
 
   const heroSlides = t('hero.slides', { returnObjects: true });
   const slidesArray = Array.isArray(heroSlides) ? heroSlides : [];
@@ -134,7 +137,10 @@ const HeroSection = ({ cryptoData, newsItems }) => {
                 <span>{t('hero.getStarted')}</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="group border-2 border-custom-border px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-accent hover:text-white hover:border-accent transition-all duration-300 flex items-center justify-center space-x-2 text-sm sm:text-base">
+              <button 
+                onClick={() => setIsVideoPopupOpen(true)}
+                className="group border-2 border-custom-border px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-accent hover:text-white hover:border-accent transition-all duration-300 flex items-center justify-center space-x-2 text-sm sm:text-base"
+              >
                 <Play className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span>{t('hero.watchTutorial')}</span>
               </button>
@@ -171,6 +177,12 @@ const HeroSection = ({ cryptoData, newsItems }) => {
           </div>
         </div>
       </div>
+
+      {/* Video Tutorial Popup */}
+      <VideoTutorialPopup 
+        isOpen={isVideoPopupOpen} 
+        onClose={() => setIsVideoPopupOpen(false)} 
+      />
     </section>
   );
 };

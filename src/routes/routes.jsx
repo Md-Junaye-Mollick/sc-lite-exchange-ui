@@ -7,6 +7,8 @@ import SpotTradingPage from "../pages/trading-pages/spot-trading-page";
 import SignInPage from "../pages/auth-pages/signin-page";
 import SignUpPage from "../pages/auth-pages/signup-page";
 import Demo from "../components/demo";
+import About from "../pages/About/About";
+import AboutUsDemo from "../components/aboutus-sections/AboutUsDemo";
 
 const RoutesPage = () => {
   return (
@@ -28,12 +30,19 @@ const RoutesPage = () => {
       <Route path="/trade/*" element={<MainLayout />}>
         <Route path="spot" element={<SpotTradingPage />} />
       </Route>
+      
+      {/* About Page  */}
+      <Route path="/AboutUs" element={<MainLayout />}>
+        <Route index element={<About />} />
+      </Route>
 
       {/* Auth */}
       <Route path="/signin" element={<SignInPage />} />
       <Route path="/signup" element={<SignUpPage />} />
 
+      {/* Demo Pages */}
       <Route path="/Demo" element={<Demo />} />
+      <Route path="/AboutUsDemo" element={<AboutUsDemo />} />
     </Routes>
   );
 };
