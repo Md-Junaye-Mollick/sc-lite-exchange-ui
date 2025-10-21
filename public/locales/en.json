@@ -316,5 +316,108 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "cookie": "Cookie Preferences"
+  },
+
+    "buySell": {
+    "title": "Buy USDT with INR",
+    "sellTitle": "Sell USDT for INR",
+    "hotCryptos": "Hot Cryptos",
+    "buy": "Buy",
+    "sell": "Sell",
+    "spend": "Spend",
+    "receive": "Receive",
+    "verifyIdentity": "Verify Identity",
+    "buyCrypto": "Buy Crypto",
+    "depositCrypto": "Deposit Crypto",
+    "insufficientAssets": "You have insufficient assets to sell",
+    "cryptoList": [
+      {
+        "symbol": "BNB",
+        "name": "BNB",
+        "apr": "0.16% APR",
+        "price": "$1,135.00",
+        "change": "+4.42%",
+        "icon": "🟡"
+      },
+      {
+        "symbol": "BTC",
+        "name": "Bitcoin",
+        "apr": "0.27% APR",
+        "price": "$111,300.23",
+        "change": "+4.28%",
+        "icon": "🟠"
+      },
+      {
+        "symbol": "ETH",
+        "name": "Ethereum",
+        "apr": "1.36% APR",
+        "price": "$4,081.74",
+        "change": "+5.09%",
+        "icon": "🔵"
+      },
+      {
+        "symbol": "SOL",
+        "name": "Solana",
+        "apr": "2.65% APR",
+        "price": "$193.95",
+        "change": "+4.40%",
+        "icon": "🟣"
+      },
+      {
+        "symbol": "DOGE",
+        "name": "Dogecoin",
+        "apr": "",
+        "price": "$0.20216",
+        "change": "+6.85%",
+        "icon": "🟡"
+      }
+    ]
+  },
+
+  "howToBuy": {
+    "title": "How to Buy Crypto",
+    "step1": {
+      "title": "Enter Amount & Select Payment",
+      "description": "Enter the amount, select the available payment method, and choose the payment account or bind the payment card."
+    },
+    "step2": {
+      "title": "Confirm Order",
+      "description": "Confirmation of transaction detail information, including trading pair quotes, fees, and other explanatory tips."
+    },
+    "step3": {
+      "title": "Receive Crypto",
+      "description": "After successful payment, the purchased crypto will be deposited into your Spot or Funding Wallet."
+    }
+  },
+
+  "tetherMarkets": {
+    "title": "Tether USDt Markets",
+    "pair": "USDT/INR",
+    "markets": "Markets",
+    "popularity": "Popularity",
+    "marketCap": "Market Cap",
+    "volume": "Volume",
+    "circulatingSupply": "Circulating Supply",
+    "description": "Tether USDt is experiencing a decline in value this week. Currently, Tether USDt is priced at ₹87.82 per USDT, with a circulating supply of 181.87B USDT, resulting in a total market capitalization of ₹15,971.36B. Over the past 24 hours, the trading volume for Tether USDt has increased by ₹675,181.17B, representing a 57.84183% rise. Moreover, USDT worth ₹11,742.09B has been traded in the last day.",
+    "conversionTables": "Conversion Tables",
+    "7daysRate": "7 days exchange rate",
+    "24hourRate": "24-hour exchange rate",
+    "1monthRate": "1 month exchange rate",
+    "3monthRate": "3 month exchange rate",
+    "rateDisclaimer": "Tether USDt's exchange rate is experiencing a decline. Currently, the value of 1 USDT is 87.82 INR, indicating that purchasing 5 USDT would cost 439.09 INR. Conversely, 1.00 INR can be exchanged for 0.0113873 USDT, and 50.00 INR can be exchanged for 0.569353 USDT, exclusive of platform or gas fees.",
+    "usdtToInr": "USDT to INR",
+    "inrToUsdt": "INR to USDT"
+  },
+
+  "popularTether": {
+    "title": "Popular Tether USDt Conversions",
+    "subtitle": "A selection of other popular currency conversions of Tether USDt to various fiat currencies.",
+    "disclaimer": {
+      "text": "This site is protected by reCAPTCHA and the Google",
+      "privacy": "Privacy Policy",
+      "and": "and",
+      "terms": "Terms of Service",
+      "apply": "apply."
+    }
   }
 }
