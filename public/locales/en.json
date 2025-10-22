@@ -581,5 +581,30 @@
     "tradingVolume": "Trading Volume / Change",
     "marketCap": "Market Cap / Change",
     "topGainer": "Top Gainer / 24h Change"
-  }
+  },
+
+  "profileMenu": "Profile Menu",
+  "tradeMenu": "Trade Menu",
+  "regularUser": "Regular User",
+  "dashboard": "Dashboard",
+  "assets": "Assets",
+  "orders": "Orders",
+  "account": "Account",
+  "referral": "Referral",
+  "rewardsHub": "Rewards Hub",
+  "dropdownsettings": "Settings",
+  "logout": "Log Out",
+  "dropdownoverview": "Overview",
+  "dropdownspot": "Spot",
+  "margin": "Margin",
+  "dropdownfutures": "Futures",
+  "options": "Options",
+  "dropdowntradingBots": "Trading Bots",
+  "dropdownearn": "Earn",
+  "funding": "Funding",
+  "assetHistory": "Asset History",
+  "accountStatement": "Account Statement",
+  "verification": "Verification",
+  "enterFullscreen": "Enter Fullscreen",
+  "exitFullscreen": "Exit Fullscreen"
 }

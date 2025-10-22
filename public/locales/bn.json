@@ -580,5 +580,30 @@
     "tradingVolume": "ট্রেডিং ভলিউম / পরিবর্তন",
     "marketCap": "মার্কেট ক্যাপ / পরিবর্তন",
     "topGainer": "সেরা গেইনার / ২৪ ঘন্টা পরিবর্তন"
-  }
+  },
+
+  "profileMenu": "প্রোফাইল মেনু",
+  "tradeMenu": "ট্রেড মেনু",
+  "regularUser": "নিয়মিত ব্যবহারকারী",
+  "dashboard": "ড্যাশবোর্ড",
+  "assets": "সম্পদ",
+  "orders": "অর্ডার",
+  "account": "অ্যাকাউন্ট",
+  "referral": "রেফারেল",
+  "rewardsHub": "পুরস্কার কেন্দ্র",
+  "dropdownsettings": "সেটিংস",
+  "logout": "লগ আউট",
+  "dropdownoverview": "সংক্ষিপ্ত বিবরণ",
+  "dropdownspot": "স্পট",
+  "margin": "মার্জিন",
+  "dropdownfutures": "ফিউচার",
+  "options": "অপশন",
+  "dropdowntradingBots": "ট্রেডিং বট",
+  "dropdownearn": "আয়",
+  "funding": "ফান্ডিং",
+  "assetHistory": "সম্পদের ইতিহাস",
+  "accountStatement": "অ্যাকাউন্ট স্টেটমেন্ট",
+  "verification": "যাচাইকরণ",
+  "enterFullscreen": "ফুলস্ক্রিন করুন",
+  "exitFullscreen": "ফুলস্ক্রিন থেকে বের হন"
 }

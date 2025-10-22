@@ -41,7 +41,7 @@ const ToggleLanguage = () => {
         className="flex items-center p-2 rounded-xl bg-sub-card btn-transition text-dispute-color"
         aria-label={t("selectLanguage")}
       >
-        <Globe size={18} className="mr-2" />
+        <Globe size={18} className="mr-0 sm:mr-2" />
         <span className="hidden sm:inline">{getCurrentLangName()}</span>
         {/* <ChevronDown size={16} className={`ml-2 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} /> */}
       </button>
