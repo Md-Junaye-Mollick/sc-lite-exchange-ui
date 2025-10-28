@@ -10,6 +10,7 @@ import SignUpPage from "../pages/auth-pages/signup-page";
 import Demo from "../components/demo";
 import About from "../pages/About/About";
 import AboutUsDemo from "../components/aboutus-sections/AboutUsDemo";
+import SettingLayout from "../Setting/SettingComponents/SettingLayout/SettingLayout";
 
 const RoutesPage = () => {
   return (
@@ -45,6 +46,12 @@ const RoutesPage = () => {
       {/* Auth */}
       <Route path="/signin" element={<SignInPage />} />
       <Route path="/signup" element={<SignUpPage />} />
+
+      {/* Setting Pages */}
+      <Route path="/SettingPage" element={<SettingLayout />}>
+        <Route index element={<Dashboard />} />           
+        <Route path="Dashboard" element={<Dashboard />} />
+      </Route>
 
       {/* Demo Pages */}
       <Route path="/Demo" element={<Demo />} />

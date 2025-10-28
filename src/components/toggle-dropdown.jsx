@@ -2,10 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import {
-  User, CreditCard, ChevronDown, Maximize2, Minimize2,
-  LayoutDashboard, Wallet, FileText, UserCircle, Users,
-  Gift, Settings, LogOut, Target, TrendingUp, Repeat2,
-  ThumbsUp, Bot, DollarSign, PieChart, FileBarChart, FileCheck
+  User, CreditCard, Maximize2, Minimize2, LayoutDashboard, Wallet, 
+  FileText, UserCircle, Users, Gift, Settings, LogOut, Target, TrendingUp,
+  Repeat2, ThumbsUp, Bot, DollarSign, PieChart, FileBarChart, FileCheck
 } from 'lucide-react';
 
 const ToggleDropdown = () => {
@@ -91,12 +90,6 @@ const ToggleDropdown = () => {
           aria-label={t('profileMenu')}
         >
           <User size={18} />
-          <ChevronDown 
-            size={14} 
-            className={`transition-transform duration-200 ${
-              activeDropdown === 'profile' ? 'rotate-180' : ''
-            }`} 
-          />
         </button>
         
         {activeDropdown === 'profile' && (
@@ -107,7 +100,7 @@ const ToggleDropdown = () => {
                   <User size={20} className="text-white" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-dispute-color">ju***@gmail.com</p>
+                  <p className="text-sm font-medium text-dispute-color">test***@gmail.com</p>
                   <p className="text-xs text-secondary-desc">{t('regularUser')}</p>
                 </div>
               </div>
@@ -141,12 +134,6 @@ const ToggleDropdown = () => {
           aria-label={t('tradeMenu')}
         >
           <CreditCard size={18} />
-          <ChevronDown 
-            size={14} 
-            className={`transition-transform duration-200 ${
-              activeDropdown === 'trade' ? 'rotate-180' : ''
-            }`} 
-          />
         </button>
         
         {activeDropdown === 'trade' && (

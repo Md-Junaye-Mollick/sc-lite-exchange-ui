@@ -1,77 +1,83 @@
-.text-dispute-color { color: theme("colors.dispute-color"); }
-.dark .text-dispute-color { color: theme("colors.dispute-color-dark"); }
-.dim .text-dispute-color { color: theme("colors.dispute-color-dim"); }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.text-secondary-desc { color: theme("colors.text-secondary-desc"); }
-.dark .text-secondary-desc { color: theme("colors.text-secondary-desc-dark"); }
-.dim .text-secondary-desc { color: theme("colors.text-secondary-desc-dim"); }
+@layer components {
+  .text-dispute-color { color: theme("colors.dispute-color"); }
+  .dark .text-dispute-color { color: theme("colors.dispute-color-dark"); }
+  .dim .text-dispute-color { color: theme("colors.dispute-color-dim"); }
 
-.text-text-color { color: theme("colors.text-color"); }
-.dark .text-text-color { color: theme("colors.text-color-dark"); }
-.dim .text-text-color { color: theme("colors.text-color-dim"); }
+  .text-secondary-desc { color: theme("colors.text-secondary-desc"); }
+  .dark .text-secondary-desc { color: theme("colors.text-secondary-desc-dark"); }
+  .dim .text-secondary-desc { color: theme("colors.text-secondary-desc-dim"); }
 
-.bg-card { background-color: theme("colors.card"); }
-.dark .bg-card { background-color: theme("colors.card-dark"); }
-.dim .bg-card { background-color: theme("colors.card-dim"); }
+  .text-text-color { color: theme("colors.text-color"); }
+  .dark .text-text-color { color: theme("colors.text-color-dark"); }
+  .dim .text-text-color { color: theme("colors.text-color-dim"); }
 
-.bg-sub-card { background-color: theme("colors.sub-card"); }
-.dark .bg-sub-card { background-color: theme("colors.sub-card-dark"); }
-.dim .bg-sub-card { background-color: theme("colors.sub-card-dim"); }
+  .bg-card { background-color: theme("colors.card"); }
+  .dark .bg-card { background-color: theme("colors.card-dark"); }
+  .dim .bg-card { background-color: theme("colors.card-dim"); }
 
-.border-custom-border { border-color: theme("colors.custom-border"); }
-.dark .border-custom-border { border-color: theme("colors.custom-border-dark"); }
-.dim .border-custom-border { border-color: theme("colors.custom-border-dim"); }
+  .bg-sub-card { background-color: theme("colors.sub-card"); }
+  .dark .bg-sub-card { background-color: theme("colors.sub-card-dark"); }
+  .dim .bg-sub-card { background-color: theme("colors.sub-card-dim"); }
 
-.bg-pre-bg { background-color: theme("colors.pre-bg"); }
-.dark .bg-pre-bg { background-color: theme("colors.pre-bg-dark"); }
-.dim .bg-pre-bg { background-color: theme("colors.pre-bg-dim"); }
+  .border-custom-border { border-color: theme("colors.custom-border"); }
+  .dark .border-custom-border { border-color: theme("colors.custom-border-dark"); }
+  .dim .border-custom-border { border-color: theme("colors.custom-border-dim"); }
 
-.bg-primary { background-color: theme("colors.bg-primary"); }
-.dark .bg-primary { background-color: theme("colors.bg-primary-dark"); }
-.dim .bg-primary { background-color: theme("colors.bg-primary-dim"); }
+  .bg-pre-bg { background-color: theme("colors.pre-bg"); }
+  .dark .bg-pre-bg { background-color: theme("colors.pre-bg-dark"); }
+  .dim .bg-pre-bg { background-color: theme("colors.pre-bg-dim"); }
 
-.bg-secondary { background-color: theme("colors.bg-secondary"); }
-.dark .bg-secondary { background-color: theme("colors.bg-secondary-dark"); }
-.dim .bg-secondary { background-color: theme("colors.bg-secondary-dim"); }
+  .bg-primary { background-color: theme("colors.bg-primary"); }
+  .dark .bg-primary { background-color: theme("colors.bg-primary-dark"); }
+  .dim .bg-primary { background-color: theme("colors.bg-primary-dim"); }
 
-.text-accent { color: theme("colors.accent"); }
-.dark .text-accent { color: theme("colors.accent-dark"); }
-.dim .text-accent { color: theme("colors.accent-dim"); }
+  .bg-secondary { background-color: theme("colors.bg-secondary"); }
+  .dark .bg-secondary { background-color: theme("colors.bg-secondary-dark"); }
+  .dim .bg-secondary { background-color: theme("colors.bg-secondary-dim"); }
 
-.bg-accent { background-color: theme("colors.accent"); }
-.dark .bg-accent { background-color: theme("colors.accent-dark"); }
-.dim .bg-accent { background-color: theme("colors.accent-dim"); }
+  .text-accent { color: theme("colors.accent"); }
+  .dark .text-accent { color: theme("colors.accent-dark"); }
+  .dim .text-accent { color: theme("colors.accent-dim"); }
 
-.border-accent { border-color: theme("colors.accent"); }
-.dark .border-accent { border-color: theme("colors.accent-dark"); }
-.dim .border-accent { border-color: theme("colors.accent-dim"); }
+  .bg-accent { background-color: theme("colors.accent"); }
+  .dark .bg-accent { background-color: theme("colors.accent-dark"); }
+  .dim .bg-accent { background-color: theme("colors.accent-dim"); }
 
-/* Gradient backgrounds */
-.bg-gradient {
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-}
+  .border-accent { border-color: theme("colors.accent"); }
+  .dark .border-accent { border-color: theme("colors.accent-dark"); }
+  .dim .border-accent { border-color: theme("colors.accent-dim"); }
 
-/* Text gradient */
-.text-gradient {
-  background: linear-gradient(to right, #fbbf24, #eab308, #f97316);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+  /* Gradient backgrounds */
+  .bg-gradient {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  }
 
-/* Button gradient hover */
-.bg-gradient-yellow-hover:hover {
-  background: linear-gradient(135deg, #fcd34d 0%, #fbbf24 100%);
-}
+  /* Text gradient */
+  .text-gradient {
+    background: linear-gradient(to right, #fbbf24, #eab308, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
-/* Glow effects */
-.shadow-glow {
-  box-shadow: 0 0 20px rgba(234, 179, 8, 0.3);
-}
-.shadow-glow-hover:hover {
-  box-shadow: 0 0 30px rgba(234, 179, 8, 0.5);
-}
+  /* Button gradient hover */
+  .bg-gradient-yellow-hover:hover {
+    background: linear-gradient(135deg, #fcd34d 0%, #fbbf24 100%);
+  }
 
-.btn-transition {
-  transition: all 0.3s ease-in-out;
+  /* Glow effects */
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(234, 179, 8, 0.3);
+  }
+  .shadow-glow-hover:hover {
+    box-shadow: 0 0 30px rgba(234, 179, 8, 0.5);
+  }
+
+  .btn-transition {
+    transition: all 0.3s ease-in-out;
+  }
 }

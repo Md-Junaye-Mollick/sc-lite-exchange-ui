@@ -3,10 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { ArrowRight, Play, Shield, TrendingUp, Lock, TrendingDown } from 'lucide-react';
 import VideoTutorialPopup from '../models/VideoTutorialPopup/VideoTutorialPopup';
 
-
 const CryptoPanel = ({ cryptoData, newsItems, activeTab, setActiveTab }) => {
   const { t } = useTranslation();
-  
   const defaultCryptoData = t('hero.defaultCrypto', { returnObjects: true }) || [];
   const defaultNews = t('hero.defaultNews', { returnObjects: true }) || [];
 
@@ -83,7 +81,6 @@ const HeroSection = ({ cryptoData, newsItems }) => {
   const [activeTab, setActiveTab] = useState('popular');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVideoPopupOpen, setIsVideoPopupOpen] = useState(false);
-
   const heroSlides = t('hero.slides', { returnObjects: true });
   const slidesArray = Array.isArray(heroSlides) ? heroSlides : [];
 

@@ -82,8 +82,8 @@ const Header = () => {
           onClick={() => setIsMobileMenuOpen(false)} />
       )}
 
-      <header className="bg-card text-dispute-color border-b border-custom-border p-2 px-4 sticky top-0 z-50 text-sm">
-        <div className="w-full flex justify-between items-center h-12">
+      <header className="bg-card text-dispute-color border-b border-custom-border p-2 sticky top-0 z-50 text-sm">
+        <div className="w-full max-w-7xl mx-auto flex justify-between px-6 items-center h-12">
           <div className="flex items-center space-x-6">
             <a href="/landing" className="flex items-center space-x-2">
               <img src="/images/logo.png" alt={t("appName")} className="w-8 h-8 object-contain" />
@@ -138,14 +138,14 @@ const Header = () => {
               <ToggleLanguage />
               <ToggleTheme />
             </div>
-            <div className="hidden lg:flex items-center space-x-2 ml-4">
+            {/* <div className="hidden lg:flex items-center space-x-2 ml-4">
               <a href="/signin" className="px-4 py-2 rounded-xl bg-gradient text-white hover:bg-gradient-teal-hover btn-transition text-sm font-medium shadow-glow hover:shadow-glow-hover">
                 {t("login")}
               </a>
               <a href="/signup" className="px-4 py-2 rounded-xl border border-accent hover:bg-accent hover:text-white btn-transition text-sm font-medium">
                 {t("signup")}
               </a>
-            </div>
+            </div> */}
             <button id="mobile-menu-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="lg:hidden p-2 rounded-xl bg-sub-card text-dispute-color hover:bg-pre-bg btn-transition"
               aria-label={t("toggleMenu")}>
@@ -200,7 +200,7 @@ const Header = () => {
             ))}
           </nav>
 
-          <div className="mt-auto space-y-4 pt-4 border-t border-custom-border">
+          {/* <div className="mt-auto space-y-4 pt-4 border-t border-custom-border">
             <div className="flex flex-col space-y-2">
               <a href="/signin" onClick={() => setIsMobileMenuOpen(false)}
                 className="w-full px-4 py-3 rounded-xl bg-gradient text-white hover:bg-gradient-teal-hover btn-transition text-center font-medium shadow-glow hover:shadow-glow-hover">
@@ -211,7 +211,7 @@ const Header = () => {
                 {t("signup")}
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
