@@ -11,6 +11,7 @@ import Demo from "../components/demo";
 import About from "../pages/About/About";
 import AboutUsDemo from "../components/aboutus-sections/AboutUsDemo";
 import SettingLayout from "../Setting/SettingComponents/SettingLayout/SettingLayout";
+import Dashboard from "../Setting/SettingPage/Dashboard/Dashboard";
 
 const RoutesPage = () => {
   return (

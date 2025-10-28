@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { LayoutDashboard, Users, PieChart, Building2, PlusCircle, ArrowDownToLine, Bot, User, Settings, Shield, Key, FileText } from 'lucide-react';
 
 const mainRoutes = [
-  { path: '/SettingPage/Positions', name: 'Positions', icon: LayoutDashboard },
+  { path: '/SettingPage/Dashboard', name: 'Dashboard', icon: LayoutDashboard },
   { path: '/SettingPage/SubAccounts', name: 'Sub Accounts', icon: Users },
   { path: '/SettingPage/PNLAnalytics', name: 'PNL Analytics', icon: PieChart },
   { path: '/SettingPage/BankDetails', name: 'Bank Details', icon: Building2 },
