@@ -4,7 +4,6 @@ import MainLayout from "../components/layouts/main-layout";
 import LandingPage from "../pages/landing-page";
 import BuyCrypto from "../pages/buy-crypto";
 import Markets from "../pages/market-page";
-import SpotTradingPage from "../pages/trading-pages/spot-trading-page";
 import SignInPage from "../pages/auth-pages/signin-page";
 import SignUpPage from "../pages/auth-pages/signup-page";
 import Demo from "../components/demo";
@@ -19,12 +18,21 @@ import SCLiteTh from "../Setting/SettingPage/AssetsPage/Wallet/SCLiteTh";
 import AssetsHistory from "../Setting/SettingPage/Orders/AssetsHistory/AssetsHistory";
 import SpotOrder from "../Setting/SettingPage/Orders/SpotOrder/SpotOrder";
 import P2POrder from "../Setting/SettingPage/Orders/P2POrder/P2POrder";
+import Identification from "../Setting/SettingPage/Account/Identification/Identification";
+import SettingSecurity from "../Setting/SettingPage/Account/Security/Security";
+import Payment from "../Setting/SettingPage/Account/Payment/Payment";
+import APIManagement from "../Setting/SettingPage/Account/APIManagement/APIManagement";
+import AccountStatement from "../Setting/SettingPage/Account/AccountStatement/AccountStatement";
+import FinancialReports from "../Setting/SettingPage/Account/FinancialReports/FinancialReports";
+import SubAccount from "../Setting/SettingPage/SubAccount/SubAccount";
+import Settings from "../Setting/SettingPage/Settings/Settings";
 import About from "../pages/more-sections/About/About";
 import AboutUsDemo from "../components/more-sections/aboutus-sections/AboutUsDemo";
 import SupportDemo from "../components/more-sections/SupportSections/SupportDemo";
 import Support from "../pages/more-sections/Support/Support";
 import SecurityDemo from "../components/more-sections/security-sections/SecurityDemo";
 import Security from "../pages/more-sections/Security/Security";
+import P2PTrading from "../pages/trade-pages/P2PTrading/P2PTrading";
 
 const RoutesPage = () => {
   return (
@@ -48,8 +56,9 @@ const RoutesPage = () => {
       </Route>
       
       {/* Trading pages */}
-      <Route path="/trade/*" element={<MainLayout />}>
-        <Route path="spot" element={<SpotTradingPage />} />
+      <Route path="/trade" element={<MainLayout />}>
+        {/* <Route path="spot" element={<Spot />} /> */}
+        <Route path="p2p" element={<P2PTrading />} />
       </Route>
       
       {/* About Page  */}
@@ -90,6 +99,23 @@ const RoutesPage = () => {
         <Route path="history" element={<AssetsHistory />} />
         <Route path="spot" element={<SpotOrder />} />
         <Route path="p2p" element={<P2POrder />} />
+      </Route>
+
+      <Route path="/account" element={<SettingLayout />}>
+        <Route path="identification" element={<Identification />} />
+        <Route path="security" element={<SettingSecurity />} />
+        <Route path="payment" element={<Payment />} />
+        <Route path="api" element={<APIManagement />} />
+        <Route path="statement" element={<AccountStatement />} />
+        <Route path="reports" element={<FinancialReports />} />
+      </Route>
+
+      <Route path="/sub-accounts" element={<SettingLayout />}>
+        <Route index element={<SubAccount />} />           
+      </Route>
+
+      <Route path="/settings" element={<SettingLayout />}>
+        <Route index element={<Settings />} />           
       </Route>
 
       {/* Demo Pages */}

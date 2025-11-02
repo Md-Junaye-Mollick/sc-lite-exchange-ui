@@ -18,7 +18,7 @@ const ToggleDropdown = () => {
     { name: t('dashboard'), icon: LayoutDashboard, path: '/setting/dashboard' },
     { name: t('assets'), icon: Wallet, path: '/assets/overview' },
     { name: t('orders'), icon: FileText, path: '/orders' },
-    { name: t('account'), icon: UserCircle, path: '/account' },
+    { name: t('account'), icon: UserCircle, path: '/account/identification' },
     { name: t('referral'), icon: Users, path: '/referral' },
     { name: t('rewardsHub'), icon: Gift, path: '/rewards' },
     { name: t('dropdownsettings'), icon: Settings, path: '/settings' },
@@ -35,8 +35,8 @@ const ToggleDropdown = () => {
     { name: t('dropdowntradingBots'), icon: Bot, path: '/trade/bots' },
     { name: t('dropdownearn'), icon: DollarSign, path: '/trade/earn' },
     { name: t('funding'), icon: PieChart, path: '/trade/funding' },
-    { name: t('assetHistory'), icon: FileBarChart, path: '/trade/history' },
-    { name: t('accountStatement'), icon: FileBarChart, path: '/trade/statement' },
+    { name: t('assetHistory'), icon: FileBarChart, path: '/orders/history' },
+    { name: t('accountStatement'), icon: FileBarChart, path: '/account/statement' },
     { name: t('verification'), icon: FileCheck, path: '/trade/verification' }
   ];
 

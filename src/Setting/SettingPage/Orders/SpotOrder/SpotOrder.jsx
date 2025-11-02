@@ -1,9 +1,10 @@
 import React from 'react'
+import SpotOrderHero from '../../../SettingComponents/orders-sections/SpotOrder/SpotOrderHero';
 
 const SpotOrder = () => {
   return (
     <div>
-      Spot Order
+      <SpotOrderHero/>
     </div>
   )
 }

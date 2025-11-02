@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "next-themes";
-import { Sun, Moon, MoonStar, ChevronDown, Check } from "lucide-react";
-
+import { Sun, Moon, MoonStar, Check } from "lucide-react";
+ 
 const ToggleTheme = () => {
   const { t } = useTranslation();
   const { theme, setTheme } = useTheme();
