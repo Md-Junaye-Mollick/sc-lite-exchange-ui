@@ -12,6 +12,15 @@ import About from "../pages/About/About";
 import AboutUsDemo from "../components/aboutus-sections/AboutUsDemo";
 import SettingLayout from "../Setting/SettingComponents/SettingLayout/SettingLayout";
 import Dashboard from "../Setting/SettingPage/Dashboard/Dashboard";
+import Overview from "../Setting/SettingPage/AssetsPage/Overview/Overview";
+import SettingSpot from "../Setting/SettingPage/AssetsPage/SettingSpot/SettingSpot";
+import Margin from "../Setting/SettingPage/AssetsPage/Margin/Margin";
+import SCLiteTr from "../Setting/SettingPage/AssetsPage/Wallet/SCLiteTr";
+import TokoCrypto from "../Setting/SettingPage/AssetsPage/Wallet/TokoCrypto";
+import SCLiteTh from "../Setting/SettingPage/AssetsPage/Wallet/SCLiteTh";
+import AssetsHistory from "../Setting/SettingPage/Orders/AssetsHistory/AssetsHistory";
+import SpotOrder from "../Setting/SettingPage/Orders/SpotOrder/SpotOrder";
+import P2POrder from "../Setting/SettingPage/Orders/P2POrder/P2POrder";
 
 const RoutesPage = () => {
   return (
@@ -49,9 +58,24 @@ const RoutesPage = () => {
       <Route path="/signup" element={<SignUpPage />} />
 
       {/* Setting Pages */}
-      <Route path="/SettingPage" element={<SettingLayout />}>
+      <Route path="/setting" element={<SettingLayout />}>
         <Route index element={<Dashboard />} />           
-        <Route path="Dashboard" element={<Dashboard />} />
+        <Route path="dashboard" element={<Dashboard />} />
+      </Route>
+
+      <Route path="/assets" element={<SettingLayout />}>
+        <Route path="overview" element={<Overview />} />
+        <Route path="spot" element={<SettingSpot />} />
+        <Route path="margin" element={<Margin />} />
+        <Route path="wallet/sc-lite-tr" element={<SCLiteTr />} />
+        <Route path="wallet/tokocrypto" element={<TokoCrypto />} />
+        <Route path="wallet/sc-lite-th" element={<SCLiteTh />} />
+      </Route>
+      
+      <Route path="/orders" element={<SettingLayout />}>
+        <Route path="history" element={<AssetsHistory />} />
+        <Route path="spot" element={<SpotOrder />} />
+        <Route path="p2p" element={<P2POrder />} />
       </Route>
 
       {/* Demo Pages */}

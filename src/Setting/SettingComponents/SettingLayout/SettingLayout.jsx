@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import SettingSidebar from './SettingSidebar';
-import Header from '../../../components/header';
-// import SettingHeader from './SettingHeader';
+import SettingHeader from './SettingHeader';
 
 const SettingLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,11 +20,11 @@ const SettingLayout = () => {
         className="flex-1 transition-all duration-300 ease-in-out ml-[72px]">
         {/* Header Component */}
         <div className="sticky top-0 z-40">
-          <Header />
+          <SettingHeader />
         </div>
 
         {/* Page Content */}
-        <div className="overflow-y-auto mt-14">
+        <div className="bg-pre-bg overflow-y-auto mt-16">
           <Outlet />
         </div>
       </main>

@@ -1,234 +1,221 @@
-import React, { useState } from 'react';
-import { ChevronDown, Menu, X, Rocket, Bell, Search, TrendingUp, Target, Activity, Wrench, Zap, Bot, Database, Brain, Shield, BarChart3, BookOpen, FileText, Video, DollarSign, Users, Gift, Link2, Settings, Grid3X3, PlayCircle, BarChart, RefreshCw, Coins } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
-import ToggleTheme from "../../../Components/Layout/ToggleTheme";
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useTranslation } from "react-i18next";
+import {
+  ChevronDown, X, Menu, BarChart2, DollarSign, Wallet, Users, LayoutDashboard, 
+  Zap, Bot, Repeat2, HardHat, Link as LinkIcon,PiggyBank, BriefcaseBusiness, TrendingUp,
+  CandlestickChart, CreditCard, Gift, Handshake, ShieldCheck, HelpCircle, Settings,
+} from "lucide-react";
+import ToggleLanguage from "../../../components/toggle-language";
+import ToggleTheme from "../../../components/toggle-theme";
+import { getNavItems } from "../../../array/header-options";
+import ToggleDropdown from "../../../components/toggle-dropdown";
 
-const SettingHeader = () => {
-  const navigate = useNavigate();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Header = () => {
+  const { t } = useTranslation();
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const dropdownRefs = useRef({});
+  const hideTimeout = useRef(null);
+  const mobileMenuRef = useRef(null);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  
-  const handleDropdown = (dropdown) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
-  };
+  const NavItems = getNavItems(t, {
+    BarChart2, DollarSign, Wallet, Users, LayoutDashboard, Zap, Bot, Repeat2,
+    HardHat, LinkIcon, PiggyBank, BriefcaseBusiness, TrendingUp, CandlestickChart,
+    CreditCard, Gift, Handshake, ShieldCheck, HelpCircle, Settings,
+  });
 
-  const tradeItems = [
-    { title: "Spot", subtitle: "Buy and sell cryptocurrencies instantly", icon: Coins, path: "/Spot" },
-    { title: "P2P", subtitle: "Person-to-person crypto trading", icon: Users, path: "/P2P" },
-    { title: "Futures", subtitle: "Trade with leverage and hedge positions", icon: TrendingUp, path: "/Futures" },
-    { title: "Options", subtitle: "Advanced derivatives trading", icon: Target, path: "/Options" },
-    { title: "Trackers", subtitle: "Monitor and track your crypto portfolio", icon: Activity, path: "/Trackers" },
-    { title: "Strategy Builder", subtitle: "Create custom trading strategies", icon: Wrench, path: "/StrategyBuilder" }
-  ];
+  useEffect(() => {
+    const handleClick = (e) => {
+      if (activeDropdown && dropdownRefs.current[activeDropdown] && 
+          !dropdownRefs.current[activeDropdown].contains(e.target)) {
+        setActiveDropdown(null);
+      }
+      if (isMobileMenuOpen && mobileMenuRef.current && 
+          !mobileMenuRef.current.contains(e.target) && 
+          !document.getElementById("mobile-menu-toggle")?.contains(e.target)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [activeDropdown, isMobileMenuOpen]);
 
-  const algohubItems = [
-    { title: "APIs", subtitle: "Create API key and Start Trading", icon: Link2, path: "/APIs" },
-    { title: "Trading Bot", subtitle: "Automate Bots from TradingView", icon: Bot, path: "/TradingBot" },
-    { title: "Trade Data", subtitle: "Download Historical tick by tick data", icon: Database, path: "/TradeData" }
-  ];
+  const handleMouseEnter = useCallback((name) => {
+    clearTimeout(hideTimeout.current);
+    setActiveDropdown(name);
+  }, []);
 
-  const aiToolsItems = [
-    { title: "AI Trading Assistant", subtitle: "Smart trading recommendations", icon: Brain, path: "/AITradingAssistant" },
-    { title: "AI Risk Analyzer", subtitle: "Intelligent risk assessment", icon: Shield, path: "/AIRiskAnalyzer" },
-    { title: "AI Portfolio Optimizer", subtitle: "Optimize your portfolio with AI", icon: BarChart3, path: "/AIPortfolioOptimizer" }
-  ];
+  const handleMouseLeave = useCallback(() => {
+    hideTimeout.current = setTimeout(() => setActiveDropdown(null), 150);
+  }, []);
 
-  const learnItems = [
-    { title: "Academy", subtitle: "Comprehensive trading courses", icon: BookOpen, path: "/Academy" },
-    { title: "Blogs", subtitle: "Latest market insights and news", icon: FileText, path: "/Blogs" },
-    { title: "Tutorials", subtitle: "Step-by-step trading guides", icon: Video, path: "/Tutorials" }
-  ];
-
-  const moreItems = [
-    { title: "Earn", subtitle: "Generate passive income from your assets", icon: DollarSign, path: "/Earn" },
-    { title: "Community", subtitle: "Connect and grow with fellow traders", icon: Users, path: "/Community" },
-    { title: "Demo Trading", subtitle: "Simulate real trading without risk", icon: PlayCircle, path: "/DemoTrading" },
-    { title: "Analytics", subtitle: "A dashboard to visualize options data", icon: BarChart, path: "/Analytics" },
-    { title: "Offers", subtitle: "Claim your Rewards", icon: Gift, path: "/Offers" },
-    { title: "Referral Program", subtitle: "Refer Friends and get rewards", icon: RefreshCw, path: "/ReferralProgram" }
-  ];
-
-  const navItems = [
-    { name: "Markets", hasDropdown: false, path: "/Markets" },
-    { name: "Trade", hasDropdown: true, items: tradeItems },
-    { name: "AlgoHub", hasDropdown: true, items: algohubItems },
-    { name: "AI Tools", hasDropdown: true, items: aiToolsItems },
-    { name: "Learn", hasDropdown: true, items: learnItems },
-    { name: "About Us", hasDropdown: false, path: "/AboutUs" },
-    { name: "Support", hasDropdown: false, path: "/Support" },
-    { name: "More", hasDropdown: true, items: moreItems }
-  ];
+  const DropdownSection = ({ title, items, isMobile }) => (
+    <div className="space-y-2">
+      <h3 className="text-xs font-semibold uppercase text-dispute-color text-opacity-70 mb-2">{title}</h3>
+      {items.map((item) => {
+        const Icon = item.icon;
+        return (
+          <a key={item.name} href={item.path}
+            className="group flex items-start p-2 rounded-lg hover:bg-pre-bg-dark btn-transition"
+            onClick={() => { setActiveDropdown(null); isMobile && setIsMobileMenuOpen(false); }}>
+            <div className="flex-shrink-0 mr-3 mt-1" style={{ color: item.iconColor }}>
+              <Icon size={20} />
+            </div>
+            <div>
+              <div className="font-medium group-hover:text-white">{item.name}</div>
+              <div className="text-xs text-secondary-desc max-w-sm">{item.description}</div>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  );
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-40">
-      <nav className="sticky top-0 z-40 bg-sub-card border-b border-custom-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-8">
-              {/* Logo */}
-              <Link to="/" className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                  <Rocket className="w-6 h-6 text-white" />
-                </div>
-                <div className="text-2xl font-bold text-gradient">
-                  Delta Web
-                </div>
-              </Link>
+    <>
+      {activeDropdown && !isMobileMenuOpen && (
+        <div className="hidden lg:block fixed inset-0 backdrop-blur-sm bg-black bg-opacity-10 z-30"
+          onClick={() => setActiveDropdown(null)} />
+      )}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 bg-black/50 z-40"
+          onClick={() => setIsMobileMenuOpen(false)} />
+      )}
 
-              {/* Desktop Navigation */}
-              <div className="hidden lg:flex space-x-4 text-sm">
-                <Link to="/" className="hover:text-text-color transition-colors flex items-center text-dispute-color">
-                  Home
-                </Link>
-                {navItems.map((item) => (
-                  item.hasDropdown ? (
-                    <div key={item.name} className="relative">
-                      <button
-                        onClick={() => handleDropdown(item.name.toLowerCase())}
-                        className="hover:text-text-color transition-colors flex items-center text-dispute-color"
-                      >
-                        {item.name} <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${activeDropdown === item.name.toLowerCase() ? 'rotate-180' : ''}`} />
-                      </button>
-                      
-                      {activeDropdown === item.name.toLowerCase() && (
-                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-80 bg-sub-card rounded-lg border border-custom-border shadow-xl transition-all duration-200">
-                          <div className="p-4 space-y-3">
-                            {item.items.map((subItem, idx) => {
-                              const IconComponent = subItem.icon;
-                              return (
-                                <Link key={idx} to={subItem.path} className="flex items-start space-x-3 p-3 hover:bg-card-hover rounded-lg cursor-pointer transition-colors" onClick={() => setActiveDropdown(null)}>
-                                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-lg flex items-center justify-center mt-1">
-                                    <IconComponent className="w-4 h-4 text-blue-400" />
-                                  </div>
-                                  <div>
-                                    <div className="text-text-color font-medium">{subItem.title}</div>
-                                    <div className="text-dispute-color text-sm">{subItem.subtitle}</div>
-                                  </div>
-                                </Link>
-                              );
-                            })}
-                          </div>
+      <header className="bg-card text-dispute-color border-b border-custom-border p-2 fixed top-0 left-0 right-0 z-40 text-sm">
+        <div className="w-full max-w-7xl mx-auto flex justify-between px-6 items-center h-12">
+          <div className="flex items-center space-x-6">
+            <a href="/landing" className="flex items-center space-x-2">
+              <img src="/images/logo.png" alt={t("appName")} className="w-8 h-8 object-contain" />
+              <span className="text-lg font-bold text-gradient">{t("appName")}</span>
+            </a>
+
+            <nav className="hidden lg:flex items-center space-x-2">
+              {NavItems.map((item) => (
+                <div key={item.name} className="relative"
+                  onMouseEnter={() => handleMouseEnter(item.name)}
+                  onMouseLeave={handleMouseLeave}
+                  ref={(el) => (dropdownRefs.current[item.name] = el)}>
+                  <a href={item.path}
+                    className={`flex items-center px-2 py-1 font-medium hover:text-accent btn-transition ${
+                      activeDropdown === item.name ? "text-accent" : "text-dispute-color"}`}
+                    onClick={(e) => {
+                      if (item.dropdown) {
+                        e.preventDefault();
+                        setActiveDropdown(activeDropdown === item.name ? null : item.name);
+                      }
+                    }}>
+                    {item.name}
+                    {item.dropdown && (
+                      <ChevronDown size={14} className={`ml-1 transition-transform duration-200 ${
+                        activeDropdown === item.name ? "rotate-180" : ""}`} />
+                    )}
+                  </a>
+                  {item.dropdown && activeDropdown === item.name && (
+                    <div className="absolute left-1/2 -translate-x-1/2 mt-[19px] w-[550px] bg-card rounded-b-xl border-b border-custom-border shadow-md p-4 z-20 grid grid-cols-2 gap-4"
+                      onMouseEnter={() => handleMouseEnter(item.name)}
+                      onMouseLeave={handleMouseLeave}>
+                      {item.dropdown.basic?.length > 0 && (
+                        <div className="col-span-1 border-r border-custom-border pr-4">
+                          <DropdownSection title={t("basic")} items={item.dropdown.basic} />
+                        </div>
+                      )}
+                      {item.dropdown.advanced?.length > 0 && (
+                        <div className="col-span-1 pl-4">
+                          <DropdownSection title={t("advanced")} items={item.dropdown.advanced} />
                         </div>
                       )}
                     </div>
-                  ) : (
-                    <Link key={item.name} to={item.path} className="hover:text-text-color transition-colors text-dispute-color">
-                      {item.name}
-                    </Link>
-                  )
-                ))}
-              </div>
-            </div>
-
-            {/* Right Side */}
-            <div className="flex items-center space-x-3">
-              <Search className="hidden sm:block w-5 h-5 text-gray-400 hover:text-dispute-color cursor-pointer transition-colors" />
-              <Bell className="hidden sm:block w-5 h-5 text-gray-400 hover:text-dispute-color cursor-pointer transition-colors" />
-              <Settings className="hidden sm:block w-5 h-5 text-gray-400 hover:text-dispute-color cursor-pointer transition-colors" />
-              <Grid3X3 className="hidden sm:block w-5 h-5 text-gray-400 hover:text-dispute-color cursor-pointer transition-colors" />
-
-              <Link to="/Login" className="hidden sm:flex px-4 py-2 text-sm text-dispute-color hover:text-text-color transition-colors flex justify-center items-center rounded-lg border border-custom-border bg-sub-card">
-                Login
-              </Link>
-              <button onClick={() => {navigate('/SignUp')}} className="hidden sm:flex px-4 py-2 text-sm bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-colors text-white">
-                Sign Up
-              </button>
-              
-              <div className="flex items-center space-x-2">
-                <ToggleTheme />
-
-                <button
-                  onClick={toggleMenu}
-                  className="lg:hidden w-9 h-9 text-dispute-color hover:text-text-color transition-colors flex justify-center items-center rounded-lg border border-custom-border bg-sub-card"
-                >
-                  <Menu size={20} />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="lg:hidden fixed inset-0 bg-black/50 z-40" onClick={toggleMenu} />
-      )}
-
-      <div className={`xl:hidden fixed top-0 right-0 h-full w-80 z-50 bg-sub-card border-l border-custom-border transform transition-transform duration-300 overflow-y-auto ${
-        isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}>
-        <div className="p-6 h-full flex flex-col">
-          <button 
-            onClick={toggleMenu} 
-            className="absolute top-5 right-6 text-dispute-color hover:text-text-color transition-colors p-2 rounded-md border border-custom-border"
-          >
-            <X size={18} />
-          </button>
-          
-          {/* Mobile Search and Bell */}
-          <div className="sm:hidden flex items-center space-x-4 mb-6 pt-4 px-3">
-            <Search className="w-5 h-5 text-gray-400 hover:text-dispute-color cursor-pointer transition-colors" />
-            <Bell className="w-5 h-5 text-gray-400 hover:text-dispute-color cursor-pointer transition-colors" />
-            <Settings className="w-5 h-5 text-gray-400 hover:text-dispute-color cursor-pointer transition-colors" />
-            <Grid3X3 className="w-5 h-5 text-gray-400 hover:text-dispute-color cursor-pointer transition-colors" />
-          </div>
-          
-          <nav className="space-y-4 flex-1">
-            <Link to="/" className="block text-dispute-color hover:text-text-color rounded-md px-3 text-lg py-3 border-b border-custom-border transition-colors" onClick={toggleMenu}>
-              Home
-            </Link>
-            {navItems.map((item) => (
-              item.hasDropdown ? (
-                <div key={item.name} className="border-b border-custom-border rounded-md px-3">
-                  <button
-                    onClick={() => handleDropdown(`mobile-${item.name.toLowerCase()}`)}
-                    className="flex items-center justify-between w-full text-dispute-color hover:text-text-color text-lg py-3 transition-colors"
-                  >
-                    <span>{item.name}</span>
-                    <ChevronDown size={16} className={`transition-transform ${activeDropdown === `mobile-${item.name.toLowerCase()}` ? 'rotate-180' : ''}`} />
-                  </button>
-                  {activeDropdown === `mobile-${item.name.toLowerCase()}` && (
-                    <div className="mt-2 space-y-2 pl-4">
-                      {item.items.map((subItem, idx) => {
-                        const IconComponent = subItem.icon;
-                        return (
-                          <Link key={idx} to={subItem.path} className="flex items-center space-x-3 py-2 text-dispute-color hover:text-text-color hover:bg-card-hover px-2 rounded cursor-pointer transition-colors" onClick={toggleMenu}>
-                            <div className="w-6 h-6 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded flex items-center justify-center">
-                              <IconComponent className="w-3 h-3 text-blue-400" />
-                            </div>
-                            <span>{subItem.title}</span>
-                          </Link>
-                        );
-                      })}
-                    </div>
                   )}
                 </div>
-              ) : (
-                <Link key={item.name} to={item.path} className="block text-dispute-color hover:text-text-color rounded-md px-3 text-lg py-3 border-b border-custom-border transition-colors" onClick={toggleMenu}>
-                  {item.name}
-                </Link>
-              )
-            ))}
-          </nav>
+              ))}
+            </nav>
+          </div>
 
-          <div className="mt-auto space-y-3">
-            <Link to="/login" className="block w-full text-center text-dispute-color border border-custom-border px-6 py-3 rounded-md hover:bg-pre-bg hover:text-text-color transition-colors" onClick={toggleMenu}>
-              Login
-            </Link>
-            <button onClick={() => {navigate('/SignUp')}} className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-md transition-colors hover:from-blue-600 hover:to-purple-700">
-              Sign Up
+          <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2">
+              <ToggleDropdown/>
+              <ToggleLanguage />
+              <ToggleTheme />
+            </div>
+            {/* <div className="hidden lg:flex items-center space-x-2 ml-4">
+              <a href="/signin" className="px-4 py-2 rounded-xl bg-gradient text-white hover:bg-gradient-teal-hover btn-transition text-sm font-medium shadow-glow hover:shadow-glow-hover">
+                {t("login")}
+              </a>
+              <a href="/signup" className="px-4 py-2 rounded-xl border border-accent hover:bg-accent hover:text-white btn-transition text-sm font-medium">
+                {t("signup")}
+              </a>
+            </div> */}
+            <button id="mobile-menu-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-2 rounded-xl bg-sub-card text-dispute-color hover:bg-pre-bg btn-transition"
+              aria-label={t("toggleMenu")}>
+              <Menu size={20} />
             </button>
           </div>
         </div>
-      </div>
+      </header>
 
-      {activeDropdown && (
-        <div className="fixed inset-0 z-30" onClick={() => setActiveDropdown(null)} />
-      )}
-    </div>
+      <div ref={mobileMenuRef}
+        className={`lg:hidden fixed top-0 right-0 h-full w-80 z-50 bg-sub-card border-l border-custom-border shadow-lg transform transition-transform duration-300 overflow-y-auto ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}>
+        <div className="p-6 h-full flex flex-col">
+          <button onClick={() => setIsMobileMenuOpen(false)}
+            className="absolute top-5 right-6 text-dispute-color hover:text-text-color transition-colors p-2 rounded-md border border-custom-border">
+            <X size={18} />
+          </button>
+
+          <nav className="flex flex-col space-y-2 flex-1 mt-12">
+            {NavItems.map((item) => (
+              <div key={item.name} className="flex flex-col border-b border-custom-border">
+                <a href={item.path}
+                  className={`flex items-center justify-between px-3 py-3 font-medium hover:text-accent btn-transition ${
+                    activeDropdown === item.name ? "text-accent" : "text-dispute-color"}`}
+                  onClick={(e) => {
+                    if (item.dropdown) {
+                      e.preventDefault();
+                      setActiveDropdown(activeDropdown === item.name ? null : item.name);
+                    } else {
+                      setIsMobileMenuOpen(false);
+                    }
+                  }}>
+                  <span>{item.name}</span>
+                  {item.dropdown && (
+                    <ChevronDown size={16} className={`transition-transform duration-200 ${
+                      activeDropdown === item.name ? "rotate-180" : ""}`} />
+                  )}
+                </a>
+                {item.dropdown && activeDropdown === item.name && (
+                  <div className="pl-4 pt-2 space-y-1 bg-card rounded-lg mt-1 pb-2 mb-2">
+                    {item.dropdown.basic?.length > 0 && (
+                      <DropdownSection title={t("basic")} items={item.dropdown.basic} isMobile />
+                    )}
+                    {item.dropdown.advanced?.length > 0 && (
+                      <div className="mt-3">
+                        <DropdownSection title={t("advanced")} items={item.dropdown.advanced} isMobile />
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            ))}
+          </nav>
+
+          {/* <div className="mt-auto space-y-4 pt-4 border-t border-custom-border">
+            <div className="flex flex-col space-y-2">
+              <a href="/signin" onClick={() => setIsMobileMenuOpen(false)}
+                className="w-full px-4 py-3 rounded-xl bg-gradient text-white hover:bg-gradient-teal-hover btn-transition text-center font-medium shadow-glow hover:shadow-glow-hover">
+                {t("login")}
+              </a>
+              <a href="/signup" onClick={() => setIsMobileMenuOpen(false)}
+                className="w-full px-4 py-3 rounded-xl border border-accent text-dispute-color hover:bg-accent btn-transition text-center font-medium">
+                {t("signup")}
+              </a>
+            </div>
+          </div> */}
+        </div>
+      </div>
+    </>
   );
 };
 
-export default SettingHeader;
+export default Header;

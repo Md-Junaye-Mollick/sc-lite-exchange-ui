@@ -15,8 +15,8 @@ const ToggleDropdown = () => {
 
   // Profile dropdown items
   const profileItems = [
-    { name: t('dashboard'), icon: LayoutDashboard, path: '/dashboard' },
-    { name: t('assets'), icon: Wallet, path: '/assets' },
+    { name: t('dashboard'), icon: LayoutDashboard, path: '/setting/dashboard' },
+    { name: t('assets'), icon: Wallet, path: '/assets/overview' },
     { name: t('orders'), icon: FileText, path: '/orders' },
     { name: t('account'), icon: UserCircle, path: '/account' },
     { name: t('referral'), icon: Users, path: '/referral' },
@@ -27,9 +27,9 @@ const ToggleDropdown = () => {
 
   // Trade dropdown items
   const tradeItems = [
-    { name: t('dropdownoverview'), icon: LayoutDashboard, path: '/trade/overview' },
-    { name: t('dropdownspot'), icon: Target, path: '/trade/spot' },
-    { name: t('margin'), icon: TrendingUp, path: '/trade/margin' },
+    { name: t('dropdownoverview'), icon: LayoutDashboard, path: '/assets/overview' },
+    { name: t('dropdownspot'), icon: Target, path: '/assets/spot' },
+    { name: t('margin'), icon: TrendingUp, path: '/assets/margin' },
     { name: t('dropdownfutures'), icon: Repeat2, path: '/trade/futures' },
     { name: t('options'), icon: ThumbsUp, path: '/trade/options' },
     { name: t('dropdowntradingBots'), icon: Bot, path: '/trade/bots' },
