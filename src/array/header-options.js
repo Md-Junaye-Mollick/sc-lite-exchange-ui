@@ -165,7 +165,7 @@ export const getNavItems = (t, {
           description: t("securityDesc"),
           icon: ShieldCheck,
           iconColor: "#2563eb",
-          path: "/security",
+          path: "/Security",
         },
       ],
       advanced: [
@@ -174,7 +174,7 @@ export const getNavItems = (t, {
           description: t("supportDesc"),
           icon: HelpCircle,
           iconColor: "#fca5a5",
-          path: "/support",
+          path: "/Support",
         },
         {
           name: t("settings"),

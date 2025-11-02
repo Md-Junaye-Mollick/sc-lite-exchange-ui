@@ -710,5 +710,212 @@
     "totalUnlocked": "Total Unlocked %",
     "nextUnlock": "Next Unlock",
     "nextUnlockDate": "Next Unlock Date"
+  },
+  "supportHero": {
+    "badge": "We're Here to Help",
+    "title": "Support Center",
+    "subtitle": "Find answers, get support, and learn how to make the most of your trading experience",
+    "searchPlaceholder": "Search for help...",
+    "categories": {
+      "all": "All Topics",
+      "trading": "Trading",
+      "security": "Security",
+      "deposits": "Deposits & Withdrawals",
+      "account": "Account"
+    }
+  },
+  "supportContact": {
+    "title": "Contact Support",
+    "channels": {
+      "liveChat": {
+        "title": "Live Chat",
+        "description": "Get instant help from our support team",
+        "availability": "24/7 Available",
+        "action": "Start Chat"
+      },
+      "email": {
+        "title": "Email Support",
+        "description": "Send us a detailed inquiry",
+        "availability": "Response within 24h",
+        "action": "Send Email"
+      },
+      "phone": {
+        "title": "Phone Support",
+        "description": "Speak with a specialist",
+        "availability": "Mon-Fri, 9AM-6PM EST",
+        "action": "Call Now"
+      }
+    },
+    "quickLinks": {
+      "tradingGuide": {
+        "title": "Trading Guide",
+        "description": "Learn the basics of crypto trading"
+      },
+      "security": {
+        "title": "Security Best Practices",
+        "description": "Keep your account safe"
+      },
+      "deposit": {
+        "title": "Deposit Methods",
+        "description": "Fund your account easily"
+      },
+      "fees": {
+        "title": "Fee Structure",
+        "description": "Understand our competitive fees"
+      },
+      "privacy": {
+        "title": "Privacy Policy",
+        "description": "How we protect your data"
+      },
+      "report": {
+        "title": "Report an Issue",
+        "description": "Encountered a problem?"
+      }
+    }
+  },
+  "supportFaq": {
+    "title": "Frequently Asked Questions",
+    "noResults": "No results found. Try different keywords.",
+    "questions": {
+      "trade1": {
+        "question": "How do I place my first trade?",
+        "answer": "To place your first trade, navigate to the trading interface, select your desired trading pair, choose between Market or Limit order, enter the amount you want to trade, and click Buy or Sell. Always review your order details before confirming."
+      },
+      "trade2": {
+        "question": "What is the difference between Market and Limit orders?",
+        "answer": "A Market order executes immediately at the current market price. A Limit order allows you to set a specific price at which you want to buy or sell, and will only execute when the market reaches that price."
+      },
+      "security1": {
+        "question": "How do I enable Two-Factor Authentication (2FA)?",
+        "answer": "Go to Account Settings > Security > Two-Factor Authentication. Download an authenticator app like Google Authenticator, scan the QR code, and enter the 6-digit code to complete the setup. Always save your backup codes in a secure location."
+      },
+      "security2": {
+        "question": "What should I do if I suspect unauthorized access?",
+        "answer": "Immediately change your password, enable 2FA if not already active, review your login history and active sessions, and contact our support team. We recommend withdrawing funds to a secure wallet if you suspect a breach."
+      },
+      "deposit1": {
+        "question": "How long do deposits take to process?",
+        "answer": "Crypto deposits typically require network confirmations and can take 10-60 minutes depending on the blockchain. Bank transfers may take 1-5 business days. You can track your deposit status in the transaction history."
+      },
+      "deposit2": {
+        "question": "Are there withdrawal limits?",
+        "answer": "Withdrawal limits depend on your verification level. Basic accounts have a 2 BTC daily limit, while fully verified accounts can withdraw up to 100 BTC daily. View your limits in Account Settings."
+      },
+      "account1": {
+        "question": "How do I verify my account?",
+        "answer": "Complete account verification by providing a government-issued ID, proof of address, and a selfie. Go to Account > Verification and follow the step-by-step process. Verification typically takes 24-48 hours."
+      },
+      "account2": {
+        "question": "Can I have multiple accounts?",
+        "answer": "No, each user is allowed only one account per platform. Multiple accounts may result in suspension. If you need to change account details, contact support for assistance."
+      }
+    }
+  },
+  "moresecurity": {
+    "badge": "Security First Approach",
+    "title": {
+      "gradient": "Your Security",
+      "normal": "Is Our Priority"
+    },
+    "description": "Trade with confidence on Delta Exchange. We employ industry-leading security measures to protect your digital assets and personal information.",
+    "stats": {
+      "protectedAssets": {
+        "value": "$2B+",
+        "label": "Protected Assets"
+      },
+      "uptime": {
+        "value": "99.99%",
+        "label": "Uptime"
+      },
+      "usersProtected": {
+        "value": "50M+",
+        "label": "Users Protected"
+      },
+      "securityBreaches": {
+        "value": "0",
+        "label": "Security Breaches"
+      }
+    }
+  },
+    "securityfeatures": {
+      "heading": "Multi-Layered Security Architecture",
+      "subheading": "Multiple layers of protection working together to keep your assets safe",
+      "activeProtection": "Active Protection",
+      "items": {
+        "encryption": {
+          "title": "Bank-Grade Encryption",
+          "description": "256-bit SSL encryption protects all your data transmissions",
+          "details": "Military-grade AES-256 encryption ensures your sensitive information remains secure at all times."
+        },
+        "mfa": {
+          "title": "Multi-Factor Authentication",
+          "description": "Add extra layers of security to your account",
+          "details": "Enable 2FA, biometric authentication, and hardware security keys for maximum protection."
+        },
+        "monitoring": {
+          "title": "Real-Time Monitoring",
+          "description": "24/7 threat detection and prevention",
+          "details": "Advanced AI-powered systems monitor for suspicious activities and unauthorized access attempts."
+        },
+        "coldStorage": {
+          "title": "Cold Storage",
+          "description": "95% of assets stored offline",
+          "details": "The majority of digital assets are kept in secure cold storage vaults, protected from online threats."
+        },
+        "safuFund": {
+          "title": "SAFU Fund",
+          "description": "Insurance fund protecting user assets",
+          "details": "A dedicated insurance fund ensures asset protection in the event of security breaches."
+        },
+        "audits": {
+          "title": "Regular Audits",
+          "description": "Third-party security assessments",
+          "details": "Independent security firms regularly audit our systems and smart contracts for vulnerabilities."
+        }
+      }
+    },
+    "certifications": {
+      "heading": "Industry Certifications",
+      "subheading": "Recognized and certified by leading security organizations",
+      "items": {
+        "iso": {
+          "name": "ISO 27001",
+          "description": "Information Security"
+        },
+        "soc": {
+          "name": "SOC 2 Type II",
+          "description": "Data Protection"
+        },
+        "pci": {
+          "name": "PCI DSS",
+          "description": "Payment Security"
+        },
+        "gdpr": {
+          "name": "GDPR",
+          "description": "Privacy Compliant"
+        }
+      }
+    },
+       "tips": {
+      "heading": "Best Security Practices",
+      "subheading": "Follow these tips to keep your account secure",
+      "items": {
+        "strongPasswords": {
+          "title": "Use Strong Passwords",
+          "description": "Create unique, complex passwords for your account"
+        },
+        "enable2FA": {
+          "title": "Enable 2FA",
+          "description": "Add an extra layer of security with two-factor authentication"
+        },
+        "phishing": {
+          "title": "Beware of Phishing",
+          "description": "Always verify URLs and never share your credentials"
+        },
+        "monitoring": {
+          "title": "Monitor Activity",
+          "description": "Regularly check your account for unauthorized transactions"
+        }
+      }
+    }
   }
-}

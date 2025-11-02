@@ -8,8 +8,6 @@ import SpotTradingPage from "../pages/trading-pages/spot-trading-page";
 import SignInPage from "../pages/auth-pages/signin-page";
 import SignUpPage from "../pages/auth-pages/signup-page";
 import Demo from "../components/demo";
-import About from "../pages/About/About";
-import AboutUsDemo from "../components/aboutus-sections/AboutUsDemo";
 import SettingLayout from "../Setting/SettingComponents/SettingLayout/SettingLayout";
 import Dashboard from "../Setting/SettingPage/Dashboard/Dashboard";
 import Overview from "../Setting/SettingPage/AssetsPage/Overview/Overview";
@@ -21,6 +19,12 @@ import SCLiteTh from "../Setting/SettingPage/AssetsPage/Wallet/SCLiteTh";
 import AssetsHistory from "../Setting/SettingPage/Orders/AssetsHistory/AssetsHistory";
 import SpotOrder from "../Setting/SettingPage/Orders/SpotOrder/SpotOrder";
 import P2POrder from "../Setting/SettingPage/Orders/P2POrder/P2POrder";
+import About from "../pages/more-sections/About/About";
+import AboutUsDemo from "../components/more-sections/aboutus-sections/AboutUsDemo";
+import SupportDemo from "../components/more-sections/SupportSections/SupportDemo";
+import Support from "../pages/more-sections/Support/Support";
+import SecurityDemo from "../components/more-sections/security-sections/SecurityDemo";
+import Security from "../pages/more-sections/Security/Security";
 
 const RoutesPage = () => {
   return (
@@ -53,6 +57,16 @@ const RoutesPage = () => {
         <Route index element={<About />} />
       </Route>
 
+      {/* Security Page  */}
+      <Route path="/Security" element={<MainLayout />}>
+        <Route index element={<Security />} />
+      </Route>
+
+      {/* Support Page  */}
+      <Route path="/Support" element={<MainLayout />}>
+        <Route index element={<Support />} />
+      </Route>
+
       {/* Auth */}
       <Route path="/signin" element={<SignInPage />} />
       <Route path="/signup" element={<SignUpPage />} />
@@ -81,6 +95,8 @@ const RoutesPage = () => {
       {/* Demo Pages */}
       <Route path="/Demo" element={<Demo />} />
       <Route path="/AboutUsDemo" element={<AboutUsDemo />} />
+      <Route path="/SupportDemo" element={<SupportDemo />} />
+      <Route path="/SecurityDemo" element={<SecurityDemo />} />
     </Routes>
   );
 };
