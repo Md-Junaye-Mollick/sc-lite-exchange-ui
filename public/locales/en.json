@@ -917,5 +917,20 @@
           "description": "Regularly check your account for unauthorized transactions"
         }
       }
-    }
+    },
+  "demotradinghero": {
+    "newFeature": "🚀 New: AI Trading Assistant Available",
+    "mainHeading": "Trade Smarter,",
+    "mainHeadingGradient": "Not Harder",
+    "subHeading": "Join millions of traders using the world's most advanced trading platform. Start with zero commission and experience the future of trading.",
+    "getStartedBtn": "Get Started Free",
+    "watchDemoBtn": "Watch Demo",
+    "tradersCount": "10M+ traders",
+    "rating": "4.9/5 rating",
+    "btcPair": "BTC/USD",
+    "buyBtn": "Buy",
+    "sellBtn": "Sell",
+    "high24h": "24h High",
+    "low24h": "24h Low"
   }
+}

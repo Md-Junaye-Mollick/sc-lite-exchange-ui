@@ -58,7 +58,7 @@ export const getNavItems = (t, {
           description: t("demoTradingDesc"),
           icon: HardHat,
           iconColor: "#6366f1",
-          path: "/trade/demo",
+          path: "/DemoTrading",
         },
       ],
       advanced: [
@@ -134,7 +134,7 @@ export const getNavItems = (t, {
           description: t("savingsDesc"),
           icon: PiggyBank,
           iconColor: "#4ade80",
-          path: "/earn/savings",
+          path: "/Savings",
         },
       ],
       advanced: [

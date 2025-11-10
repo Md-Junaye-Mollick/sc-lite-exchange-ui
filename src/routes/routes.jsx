@@ -33,6 +33,10 @@ import Support from "../pages/more-sections/Support/Support";
 import SecurityDemo from "../components/more-sections/security-sections/SecurityDemo";
 import Security from "../pages/more-sections/Security/Security";
 import P2PTrading from "../pages/trade-pages/P2PTrading/P2PTrading";
+import DemoTrading from "../pages/trade-pages/DemoTrading/DemoTrading";
+import DemotradingDemo from "../components/trade-sections/Demotrading-sections/DemotradingDemo";
+import EarnDemo from "../components/earn-sections/EarnDemo";
+import Savings from "../pages/earn-pages/EarnSavings/EarnSavings";
 
 const RoutesPage = () => {
   return (
@@ -74,6 +78,15 @@ const RoutesPage = () => {
       {/* Support Page  */}
       <Route path="/Support" element={<MainLayout />}>
         <Route index element={<Support />} />
+      </Route>
+
+      {/* DemoTrading Page  */}
+      <Route path="/DemoTrading" element={<MainLayout />}>
+        <Route index element={<DemoTrading />} />
+      </Route>
+      {/* Savings Page  */}
+      <Route path="/Savings" element={<MainLayout />}>
+        <Route index element={<Savings />} />
       </Route>
 
       {/* Auth */}
@@ -123,6 +136,8 @@ const RoutesPage = () => {
       <Route path="/AboutUsDemo" element={<AboutUsDemo />} />
       <Route path="/SupportDemo" element={<SupportDemo />} />
       <Route path="/SecurityDemo" element={<SecurityDemo />} />
+      <Route path="/DemoTradingDemo" element={<DemotradingDemo />} />
+      <Route path="/EarnDemo" element={<EarnDemo />} />
     </Routes>
   );
 };
