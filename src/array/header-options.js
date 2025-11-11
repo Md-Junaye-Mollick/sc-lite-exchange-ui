@@ -143,7 +143,7 @@ export const getNavItems = (t, {
           description: t("stakingDesc"),
           icon: Wallet,
           iconColor: "#a78bfa",
-          path: "/earn/staking",
+          path: "/Stakings",
         },
       ],
     },
