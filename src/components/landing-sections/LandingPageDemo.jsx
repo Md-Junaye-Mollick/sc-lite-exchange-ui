@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { TrendingUp, TrendingDown, Shield, Lock, Zap, BarChart3, Users, ArrowRight, Play, Menu, X, ChevronDown } from 'lucide-react';
+import { TrendingUp, TrendingDown, Shield, Lock, Zap, BarChart3, Users, ArrowRight, Play, Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Wallet,  ChevronRight } from 'lucide-react';
+import Testimonials from './Testimonials';
+import Header from '../header';
+import Footer from '../footer';
+import CTA from './CTA';
 
 const CryptoTicker = () => {
   const coins = [
@@ -10,14 +16,23 @@ const CryptoTicker = () => {
   ];
 
   return (
-    <div className="bg-sub-card border-b border-custom-border overflow-hidden py-3">
-      <div className="flex animate-scroll whitespace-nowrap">
+    <div className="bg-sub-card border-y border-custom-border py-3 overflow-hidden">
+      <style>{`
+        @keyframes scroll-rtl {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-scroll-rtl {
+          animation: scroll-rtl 30s linear infinite;
+        }
+      `}</style>
+      <div className="flex animate-scroll-rtl space-x-8">
         {[...coins, ...coins].map((coin, idx) => (
-          <div key={idx} className="inline-flex items-center mx-6 space-x-2">
-            <span className="text-dispute-color font-semibold">{coin.symbol}</span>
+          <div key={idx} className="flex items-center space-x-3 whitespace-nowrap">
+            <span className="font-semibold text-dispute-color">{coin.symbol}</span>
             <span className="text-secondary-desc">{coin.price}</span>
             <span className={`flex items-center ${coin.isUp ? 'text-green-500' : 'text-red-500'}`}>
-              {coin.isUp ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
+              {coin.isUp ? <TrendingUp className="w-4 h-4" /> : <TrendingDown className="w-4 h-4" />}
               {coin.change}
             </span>
           </div>
@@ -27,58 +42,7 @@ const CryptoTicker = () => {
   );
 };
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  return (
-    <header className="sticky top-0 z-50 bg-pre-bg/80 backdrop-blur-xl border-b border-custom-border">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient rounded-xl flex items-center justify-center">
-              <TrendingUp className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-2xl font-bold text-gradient">Delta</span>
-          </div>
-
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#markets" className="text-secondary-desc hover:text-accent transition-colors">Markets</a>
-            <a href="#trading" className="text-secondary-desc hover:text-accent transition-colors">Trading</a>
-            <a href="#features" className="text-secondary-desc hover:text-accent transition-colors">Features</a>
-            <a href="#about" className="text-secondary-desc hover:text-accent transition-colors">About</a>
-          </nav>
-
-          <div className="hidden md:flex items-center space-x-4">
-            <button className="text-dispute-color hover:text-accent transition-colors">Sign In</button>
-            <button className="bg-gradient text-white px-6 py-2 rounded-lg font-semibold hover:bg-gradient-yellow-hover transition-all">
-              Get Started
-            </button>
-          </div>
-
-          <button className="md:hidden text-dispute-color" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-
-        {isMenuOpen && (
-          <div className="md:hidden py-4 space-y-4">
-            <a href="#markets" className="block text-secondary-desc hover:text-accent">Markets</a>
-            <a href="#trading" className="block text-secondary-desc hover:text-accent">Trading</a>
-            <a href="#features" className="block text-secondary-desc hover:text-accent">Features</a>
-            <a href="#about" className="block text-secondary-desc hover:text-accent">About</a>
-            <button className="w-full bg-gradient text-white px-6 py-2 rounded-lg font-semibold">
-              Get Started
-            </button>
-          </div>
-        )}
-      </div>
-    </header>
-  );
-};
-
-const HeroSection = () => {
-  const [activeTab, setActiveTab] = useState('popular');
-  
+const CryptoPanel = ({ activeTab, setActiveTab }) => {
   const cryptoData = [
     { name: 'Bitcoin', symbol: 'BTC', price: '$67,234.56', change: '+5.23%', isUp: true },
     { name: 'Ethereum', symbol: 'ETH', price: '$3,456.78', change: '+3.12%', isUp: true },
@@ -93,115 +57,153 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative pt-12 pb-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative z-10">
-            <div className="inline-block mb-6">
-              <div className="bg-accent/10 border border-accent/30 rounded-full px-4 py-2 flex items-center space-x-2 animate-pulse">
-                <TrendingUp className="w-4 h-4 text-accent" />
-                <span className="text-sm text-accent font-medium">Market is up 12.5% today</span>
+    <div className="bg-sub-card backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-custom-border shadow-2xl">
+      <div className="flex space-x-2 sm:space-x-4 mb-4 sm:mb-6 border-b border-custom-border overflow-x-auto">
+        {['popular', 'gainers', 'news'].map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`pb-2 sm:pb-3 px-3 sm:px-4 font-semibold text-sm sm:text-base whitespace-nowrap transition-all duration-300 capitalize ${
+              activeTab === tab ? 'text-accent border-b-2 border-accent' : 'text-secondary-desc hover:text-dispute-color'
+            }`}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+
+      {activeTab === 'news' ? (
+        <div className="space-y-3 sm:space-y-4">
+          {news.map((item, idx) => (
+            <div key={idx} className="bg-pre-bg rounded-lg sm:rounded-xl p-3 sm:p-4 hover:bg-card transition-colors cursor-pointer">
+              <p className="text-dispute-color font-medium mb-1 text-sm sm:text-base">{item.title}</p>
+              <p className="text-secondary-desc text-xs sm:text-sm">{item.time}</p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="space-y-3 sm:space-y-4">
+          {cryptoData.map((crypto, idx) => (
+            <div key={idx} className="flex items-center justify-between p-3 sm:p-4 bg-pre-bg rounded-lg sm:rounded-xl hover:bg-card transition-all duration-300 cursor-pointer group">
+              <div className="flex items-center space-x-3 sm:space-x-4">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient rounded-full flex items-center justify-center font-bold text-dispute-color text-sm sm:text-base">
+                  {crypto.symbol.charAt(0)}
+                </div>
+                <div>
+                  <p className="font-semibold text-dispute-color text-sm sm:text-base">{crypto.name}</p>
+                  <p className="text-xs sm:text-sm text-secondary-desc">{crypto.symbol}</p>
+                </div>
+              </div>
+              <div className="text-right">
+                <p className="font-semibold text-dispute-color text-sm sm:text-base">{crypto.price}</p>
+                <p className={`text-xs sm:text-sm flex items-center justify-end ${crypto.isUp ? 'text-green-500' : 'text-red-500'}`}>
+                  {crypto.isUp ? <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 mr-1" /> : <TrendingDown className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />}
+                  {crypto.change}
+                </p>
               </div>
             </div>
-            
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              <span className="text-gradient">
-                Trade Crypto with Confidence
-              </span>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}; // Assuming these are imported from a library like lucide-react
+
+const HeroSection = () => {
+  const [activeTab, setActiveTab] = useState('popular');
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroSlides = [
+    { title: 'Trade Crypto with Confidence', subtitle: 'Access the world\'s leading cryptocurrency exchange. Trade Bitcoin, Ethereum, and 200+ digital assets.' },
+    { title: 'Secure & Fast Trading', subtitle: 'Bank-grade security with lightning-fast execution. Your assets are always protected.' },
+    { title: 'Advanced Trading Tools', subtitle: 'Professional charts, real-time data, and powerful analysis tools for serious traders.' }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Define the background style
+  const backgroundStyle = {
+    backgroundImage: `url('/images/trading-chart-bg.jpg')`, // Path to your trading graph image
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  };
+
+  return (
+    <section className="relative sm:pt-6 md:pt-8 pb-12 sm:pb-16 md:pb-20 overflow-hidden mt-16" style={backgroundStyle}>
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10"> {/* Added relative z-10 to ensure content is above background */}
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
+          <div className="order-1 lg:order-1">
+            <div className="inline-block mb-4 sm:mb-6">
+              <div className="bg-accent/10 border border-accent/30 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 flex items-center space-x-2 animate-pulse">
+                <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-accent" />
+                <span className="text-xs sm:text-sm text-accent font-medium">Market is up 12.5% today</span>
+              </div>
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+              <span className="text-gradient">{heroSlides[currentSlide].title}</span>
             </h1>
-            
-            <p className="text-xl text-secondary-desc mb-8 leading-relaxed">
-              Access the world's leading cryptocurrency exchange. Trade Bitcoin, Ethereum, and 200+ digital assets with advanced tools and lowest fees.
+
+            <p className="text-base sm:text-lg md:text-xl text-secondary-desc mb-6 sm:mb-8 leading-relaxed">
+              {heroSlides[currentSlide].subtitle}
             </p>
 
-            <div className="bg-sub-card backdrop-blur-sm rounded-2xl p-6 mb-8 border border-custom-border">
-              <p className="text-sm text-secondary-desc mb-3">Your Portfolio Value</p>
-              <div className="flex items-baseline space-x-3 mb-3 flex-wrap">
-                <span className="text-5xl font-bold text-dispute-color">0.00</span>
-                <span className="text-secondary-desc text-xl">BTC</span> 
-                <span className="text-secondary-desc">≈ $0.00</span>
+            <div className="bg-sub-card backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 border border-custom-border">
+              <p className="text-xs sm:text-sm text-secondary-desc mb-2 sm:mb-3">Your Portfolio Value</p>
+              <div className="flex items-baseline space-x-2 sm:space-x-3 mb-2 sm:mb-3 flex-wrap">
+                <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-dispute-color">0.00</span>
+                <span className="text-secondary-desc text-lg sm:text-xl">BTC</span>
+                <span className="text-secondary-desc text-sm sm:text-base">≈ $0.00</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm">
+              <div className="flex items-center space-x-2 text-xs sm:text-sm">
                 <span className="text-secondary-desc">Today's P&L</span>
                 <span className="text-green-500 font-medium">$0.00 (0.00%)</span>
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-4 mb-8">
-              <button className="group bg-gradient text-white px-8 py-4 rounded-xl font-semibold hover:bg-gradient-yellow-hover transform hover:scale-105 transition-all duration-300 shadow-glow hover:shadow-glow-hover flex items-center space-x-2">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-6 sm:mb-8">
+              <button className="group bg-gradient text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-gradient-yellow-hover transform hover:scale-105 transition-all duration-300 shadow-glow hover:shadow-glow-hover flex items-center justify-center space-x-2 text-sm sm:text-base">
                 <span>Start Trading Now</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="group border-2 border-custom-border px-8 py-4 rounded-xl font-semibold hover:bg-accent hover:text-white hover:border-accent transition-all duration-300 flex items-center space-x-2">
-                <Play className="w-5 h-5" />
+              <button className="group border-2 border-custom-border px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-accent hover:text-white hover:border-accent transition-all duration-300 flex items-center justify-center space-x-2 text-sm sm:text-base">
+                <Play className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span>Watch Demo</span>
               </button>
             </div>
 
-            <div className="flex flex-wrap items-center space-x-6 text-sm text-secondary-desc">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-6 text-xs sm:text-sm text-secondary-desc mb-4 sm:mb-0">
               <div className="flex items-center space-x-2">
-                <Shield className="w-5 h-5 text-green-500" />
+                <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" />
                 <span>Bank-Grade Security</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Lock className="w-5 h-5 text-blue-500" />
+                <Lock className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />
                 <span>SAFU Protected</span>
               </div>
             </div>
+
+            <div className="flex space-x-2 mt-6">
+              {heroSlides.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentSlide(idx)}
+                  className={`h-1 rounded-full transition-all duration-300 ${
+                    idx === currentSlide ? 'w-6 sm:w-8 bg-accent' : 'w-3 sm:w-4 bg-custom-border'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
 
-          <div className="relative">
-            <div className="bg-sub-card backdrop-blur-xl rounded-3xl p-8 border border-custom-border shadow-2xl">
-              <div className="flex space-x-4 mb-6 border-b border-custom-border">
-                {['popular', 'gainers', 'news'].map((tab) => (
-                  <button
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
-                    className={`pb-3 px-4 font-semibold capitalize transition-all duration-300 ${
-                      activeTab === tab
-                        ? 'text-accent border-b-2 border-accent'
-                        : 'text-secondary-desc hover:text-dispute-color'
-                    }`}
-                  >
-                    {tab}
-                  </button>
-                ))}
-              </div>
-
-              {activeTab === 'news' ? (
-                <div className="space-y-4">
-                  {news.map((item, idx) => (
-                    <div key={idx} className="bg-pre-bg rounded-xl p-4 hover:bg-card transition-colors cursor-pointer">
-                      <p className="text-dispute-color font-medium mb-1">{item.title}</p>
-                      <p className="text-secondary-desc text-sm">{item.time}</p>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="space-y-4">
-                  {cryptoData.map((crypto, idx) => (
-                    <div key={idx} className="flex items-center justify-between p-4 bg-pre-bg rounded-xl hover:bg-card transition-all duration-300 cursor-pointer group">
-                      <div className="flex items-center space-x-4">
-                        <div className="w-10 h-10 bg-gradient rounded-full flex items-center justify-center font-bold text-dispute-color">
-                          {crypto.symbol.charAt(0)}
-                        </div>
-                        <div>
-                          <p className="font-semibold text-dispute-color">{crypto.name}</p>
-                          <p className="text-sm text-secondary-desc">{crypto.symbol}</p>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <p className="font-semibold text-dispute-color">{crypto.price}</p>
-                        <p className={`text-sm flex items-center justify-end ${crypto.isUp ? 'text-green-500' : 'text-red-500'}`}>
-                          {crypto.isUp ? <TrendingUp className="w-4 h-4 mr-1" /> : <TrendingDown className="w-4 h-4 mr-1" />}
-                          {crypto.change}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+          <div className="order-1 lg:order-2">
+            <img src="/images/Mockup-4.png" alt="Phone Mockup" />
           </div>
         </div>
       </div>
@@ -211,53 +213,141 @@ const HeroSection = () => {
 
 const Features = () => {
   const features = [
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: 'Lightning Fast',
-      description: 'Execute trades in milliseconds with our advanced matching engine'
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: 'Secure Trading',
-      description: 'Multi-layer security with cold storage and 2FA protection'
-    },
-    {
-      icon: <BarChart3 className="w-8 h-8" />,
-      title: 'Advanced Charts',
-      description: 'Professional trading tools with real-time market data'
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: '24/7 Support',
-      description: 'Round-the-clock customer support in multiple languages'
-    }
+    { icon: Shield, title: 'Secure Trading', description: 'Multi-layer security with cold storage and 2FA protection', color: 'from-blue-500 to-cyan-500' },
+    { icon: Zap, title: 'Lightning Fast', description: 'Execute trades in milliseconds with our advanced matching engine', color: 'from-accent to-orange-500' },
+    { icon: Users, title: '24/7 Support', description: 'Round-the-clock customer support in multiple languages', color: 'from-purple-500 to-pink-500' },
+    { icon: BarChart3, title: 'Advanced Charts', description: 'Professional trading tools with real-time market data', color: 'from-green-500 to-emerald-500' }
   ];
 
   return (
-    <section id="features" className="py-20 bg-pre-bg">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gradient">Why Choose Delta</span>
-          </h2>
-          <p className="text-xl text-secondary-desc">
-            Experience the future of cryptocurrency trading
-          </p>
+    <section className="py-12 sm:py-16 lg:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold pb-2 sm:mb-4 text-gradient">Why Choose Delta</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-secondary-desc max-w-2xl mx-auto">Experience the future of cryptocurrency trading</p>
         </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, idx) => (
-            <div key={idx} className="bg-sub-card rounded-2xl p-6 border border-custom-border hover:border-accent transition-all duration-300 group">
-              <div className="text-accent mb-4 group-hover:scale-110 transition-transform">
-                {feature.icon}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {features.map(({ icon: Icon, title, description, color }, idx) => (
+            <div key={idx} className="group relative bg-sub-card backdrop-blur-sm p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-custom-border hover:border-accent/50 transition-all duration-500 transform hover:-translate-y-2 cursor-pointer overflow-hidden">
+              <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+              <div className={`inline-flex p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-gradient-to-br ${color} text-white mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <Icon className="w-10 h-10 sm:w-12 sm:h-12" />
               </div>
-              <h3 className="text-xl font-bold text-dispute-color mb-2">{feature.title}</h3>
-              <p className="text-secondary-desc">{feature.description}</p>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-dispute-color group-hover:text-accent transition-colors">{title}</h3>
+              <p className="text-secondary-desc leading-relaxed text-sm sm:text-base">{description}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
+  );
+};
+
+const MobileApp = () => {
+  const { t } = useTranslation();
+
+  const cryptoData = [
+    { name: 'BTC', fullName: t('mobileApp.cryptoData.0.fullName'), price: '$115,191.26', change: '-1.78%', isNegative: true, icon: '₿' },
+    { name: 'ETH', fullName: t('mobileApp.cryptoData.1.fullName'), price: '$4,120.28', change: '-3.53%', isNegative: true, icon: 'Ξ' },
+    { name: 'BNB', fullName: t('mobileApp.cryptoData.2.fullName'), price: '$1,224.31', change: '-4.18%', isNegative: true, icon: 'B' },
+    { name: 'XRP', fullName: t('mobileApp.cryptoData.3.fullName'), price: '$2.52', change: '-3.78%', isNegative: true, icon: 'X' },
+    { name: 'SOL', fullName: t('mobileApp.cryptoData.4.fullName'), price: '$145.32', change: '+2.45%', isNegative: false, icon: 'S' },
+    { name: 'ADA', fullName: t('mobileApp.cryptoData.5.fullName'), price: '$0.68', change: '+1.23%', isNegative: false, icon: 'A' },
+  ];
+
+  const platforms = [
+    { 
+      name: t('mobileApp.platforms.0.name'), 
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg', 
+      color: 'from-gray-600 to-gray-700' 
+    },
+    { 
+      name: t('mobileApp.platforms.1.name'), 
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg', 
+      color: 'from-blue-600 to-blue-700' 
+    },
+    { 
+      name: t('mobileApp.platforms.2.name'), 
+      icon: 'images/Linux.png', 
+      color: 'from-orange-600 to-red-600' 
+    }
+  ];
+
+  return (
+    <div>
+      <section className="py-12 sm:py-16 lg:py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-orange-500/5"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+            <div className="relative order-2 md:order-1 h-30 w-20">
+                <img src="images/Mockup-4.png" alt="Phone Mockup" />
+            </div>
+
+            <div className="order-1 md:order-2">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight text-dispute-color">
+                {t('mobileApp.heading1')}<br />
+                <span className="text-gradient">
+                  {t('mobileApp.heading2')}
+                </span>
+              </h2>
+              <p className="text-base sm:text-lg lg:text-xl text-secondary-desc mb-6 sm:mb-8 leading-relaxed">
+                {t('mobileApp.description')}
+              </p>
+
+              <div className="bg-sub-card backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 border border-custom-border">
+                <div className="flex items-start space-x-4 sm:space-x-6">
+                 <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white p-2 sm:p-3 rounded-xl sm:rounded-2xl flex-shrink-0 flex items-center justify-center">
+                    <img 
+                      src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://example.com/app-download" 
+                      alt="QR Code"
+                      className="w-full h-full rounded-lg object-contain"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-xs sm:text-sm text-secondary-desc mb-2">{t('mobileApp.scanToDownload')}</p>
+                    <p className="font-bold text-base sm:text-lg text-dispute-color mb-2 sm:mb-3">{t('mobileApp.iosAndroid')}</p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="bg-green-500/20 text-green-500 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold">
+                        ⭐ {t('mobileApp.rating')}
+                      </span>
+                      <span className="bg-blue-500/20 text-blue-500 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold">
+                        {t('mobileApp.downloads')}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mb-6">
+                <p className="text-xs sm:text-sm text-secondary-desc mb-4">{t('mobileApp.availableOnDesktop')}</p>
+                <div className="flex space-x-3 sm:space-x-4">
+                  {platforms.map((platform, idx) => (
+                    <div
+                      key={idx}
+                      className="group text-center cursor-pointer transform hover:scale-110 transition-all duration-300"
+                    >
+                      <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${platform.color} rounded-xl sm:rounded-2xl flex items-center justify-center mb-2 shadow-lg group-hover:shadow-2xl`}>
+                        <img 
+                          src={platform.icon} 
+                          alt={platform.name} 
+                          className="w-6 h-6 sm:w-8 sm:h-8 brightness-0 invert"
+                        />
+                      </div>
+                      <p className="text-xs sm:text-sm text-secondary-desc hover:text-dispute-color transition-colors">{platform.name}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <a href="#" className="text-xs sm:text-sm text-accent hover:text-accent/80 flex items-center space-x-2 group">
+                <span>⬇ {t('mobileApp.moreDownloadOptions')}</span>
+                <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 
@@ -272,10 +362,10 @@ const Stats = () => {
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, idx) => (
             <div key={idx} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">{stat.value}</div>
+              <div className="text-4xl lg:text-5xl font-bold text-gradient mb-2">{stat.value}</div>
               <div className="text-secondary-desc">{stat.label}</div>
             </div>
           ))}
@@ -285,147 +375,19 @@ const Stats = () => {
   );
 };
 
-const CTA = () => {
-  return (
-    <section className="py-20 bg-gradient rounded-3xl mx-4 lg:mx-8 my-20">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-          Start Trading Today
-        </h2>
-        <p className="text-xl text-white/90 mb-8">
-          Join millions of traders worldwide. Sign up now and get $10 bonus credit.
-        </p>
-        <button className="bg-white text-black px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-xl">
-          Create Free Account
-        </button>
-      </div>
-    </section>
-  );
-};
 
-const Footer = () => {
-  return (
-    <footer className="bg-pre-bg border-t border-custom-border py-12">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient rounded-lg flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold text-gradient">Delta</span>
-            </div>
-            <p className="text-secondary-desc text-sm">
-              The world's leading cryptocurrency exchange platform.
-            </p>
-          </div>
-          
-          <div>
-            <h4 className="font-semibold text-dispute-color mb-4">Products</h4>
-            <ul className="space-y-2 text-secondary-desc text-sm">
-              <li><a href="#" className="hover:text-accent">Spot Trading</a></li>
-              <li><a href="#" className="hover:text-accent">Futures</a></li>
-              <li><a href="#" className="hover:text-accent">Staking</a></li>
-              <li><a href="#" className="hover:text-accent">NFT</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-semibold text-dispute-color mb-4">Company</h4>
-            <ul className="space-y-2 text-secondary-desc text-sm">
-              <li><a href="#" className="hover:text-accent">About Us</a></li>
-              <li><a href="#" className="hover:text-accent">Careers</a></li>
-              <li><a href="#" className="hover:text-accent">Blog</a></li>
-              <li><a href="#" className="hover:text-accent">Press</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-semibold text-dispute-color mb-4">Support</h4>
-            <ul className="space-y-2 text-secondary-desc text-sm">
-              <li><a href="#" className="hover:text-accent">Help Center</a></li>
-              <li><a href="#" className="hover:text-accent">Contact Us</a></li>
-              <li><a href="#" className="hover:text-accent">API Docs</a></li>
-              <li><a href="#" className="hover:text-accent">Fees</a></li>
-            </ul>
-          </div>
-        </div>
-        
-        <div className="border-t border-custom-border pt-8 text-center text-secondary-desc text-sm">
-          <p>© 2024 Delta Exchange. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-  );
-};
-
-const LandingPageDemo = () => {
-  return (
-    <div className="min-h-screen bg-pre-bg text-dispute-color">
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-        
-        * {
-          font-family: 'Inter', sans-serif;
-        }
-        
-        .bg-pre-bg { background-color: #0a0e17; }
-        .bg-sub-card { background-color: #131722; }
-        .bg-card { background-color: #1a1f2e; }
-        .text-dispute-color { color: #e8eaed; }
-        .text-secondary-desc { color: #8b92a7; }
-        .border-custom-border { border-color: #1e2433; }
-        
-        .bg-gradient {
-          background: linear-gradient(135deg, #fcd535 0%, #f7931a 100%);
-        }
-        
-        .bg-gradient-yellow-hover {
-          background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
-        }
-        
-        .text-gradient {
-          background: linear-gradient(135deg, #fcd535 0%, #f7931a 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-        
-        .text-accent { color: #fcd535; }
-        .border-accent { border-color: #fcd535; }
-        .bg-accent { background-color: #fcd535; }
-        
-        .shadow-glow {
-          box-shadow: 0 4px 20px rgba(252, 213, 53, 0.3);
-        }
-        
-        .shadow-glow-hover {
-          box-shadow: 0 8px 30px rgba(252, 213, 53, 0.5);
-        }
-        
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        
-        .animate-scroll {
-          animation: scroll 30s linear infinite;
-        }
-        
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
-      
-      <CryptoTicker />
-      <Header />
-      <HeroSection />
-      <Stats />
-      <Features />
-      <CTA />
-      <Footer />
-    </div>
-  );
-};
+const LandingPageDemo = () => (
+  <div className="min-h-screen bg-card text-dispute-color">
+    <Header/>
+    <CryptoTicker />
+    <HeroSection />
+    <Stats />
+    <Features />
+    <Testimonials/>
+    <MobileApp/>
+    <CTA />
+    <Footer />
+  </div>
+);
 
 export default LandingPageDemo;
