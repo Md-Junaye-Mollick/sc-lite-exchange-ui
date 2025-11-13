@@ -40,6 +40,8 @@ import Savings from "../pages/earn-pages/EarnSavings/EarnSavings";
 import EarnStakings from "../pages/earn-pages/EarnStakings/EarnStakings";
 import EarnStakingDemo from "../components/earn-sections/EarnStakingDemo";
 import LandingPageDemo from "../components/landing-sections/LandingPageDemo";
+import FuturesOverViewDemo from "../components/futures-sections/futures-overview-sections/FuturesOverViewDemo";
+import FuturesOverview from "../pages/FuturesOverview/FuturesOverview";
 
 const RoutesPage = () => {
   return (
@@ -97,6 +99,10 @@ const RoutesPage = () => {
       <Route path="/Stakings" element={<MainLayout />}>
         <Route index element={<EarnStakings />} />
       </Route>
+      {/* Futures OverView  Page  */}
+      <Route path="/FuturesOverview" element={<MainLayout />}>
+        <Route index element={<FuturesOverview />} />
+      </Route>
 
       {/* Auth */}
       <Route path="/signin" element={<SignInPage />} />
@@ -149,6 +155,7 @@ const RoutesPage = () => {
       <Route path="/DemoTradingDemo" element={<DemotradingDemo />} />
       <Route path="/EarnDemo" element={<EarnDemo />} />
       <Route path="/EarnStakingDemo" element={<EarnStakingDemo />} />
+      <Route path="/FuturesOverviewDemo" element={<FuturesOverViewDemo />} />
     </Routes>
   );
 };

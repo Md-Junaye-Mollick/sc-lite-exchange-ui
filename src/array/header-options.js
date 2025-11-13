@@ -110,7 +110,7 @@ export const getNavItems = (t, {
           description: t("futuresOverviewDesc"),
           icon: TrendingUp,
           iconColor: "#f59e0b",
-          path: "/futures/overview",
+          path: "/FuturesOverview",
         },
       ],
       advanced: [
