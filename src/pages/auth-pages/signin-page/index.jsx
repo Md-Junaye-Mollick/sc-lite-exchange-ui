@@ -364,9 +364,9 @@ const SignInPage = () => {
               {/* Using your provided image path */}
               {/* Make sure '/images/logo.png' exists in your 'public' folder */}
               <img
-                src="/images/logo.png"
+                src="/images/logo2.png"
                 alt={t("appName")}
-                className="w-20 h-20 object-contain"
+                className="w-30 h-20 object-contain"
               />
               {/* Fallback if image not found or if you prefer an icon for now */}
               {/* <Droplet size={64} className="text-accent" /> */}

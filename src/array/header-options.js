@@ -110,7 +110,7 @@ export const getNavItems = (t, {
           description: t("futuresOverviewDesc"),
           icon: TrendingUp,
           iconColor: "#f59e0b",
-          path: "/futures/overview",
+          path: "/FuturesOverview",
         },
       ],
       advanced: [
@@ -143,7 +143,7 @@ export const getNavItems = (t, {
           description: t("stakingDesc"),
           icon: Wallet,
           iconColor: "#a78bfa",
-          path: "/earn/staking",
+          path: "/Stakings",
         },
       ],
     },

@@ -86,8 +86,8 @@ const Header = () => {
         <div className="w-full max-w-7xl mx-auto flex justify-between px-6 items-center h-12">
           <div className="flex items-center space-x-6">
             <a href="/landing" className="flex items-center space-x-2">
-              <img src="/images/logo.png" alt={t("appName")} className="w-8 h-8 object-contain" />
-              <span className="text-lg font-bold text-gradient">{t("appName")}</span>
+              <img src="/images/logo2.png" alt={t("appName")} className="w-20 h-8 object-contain" />
+              {/* <span className="text-lg font-bold text-gradient">{t("appName")}</span> */}
             </a>
 
             <nav className="hidden lg:flex items-center space-x-2">

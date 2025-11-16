@@ -37,11 +37,6 @@ import DemoTrading from "../pages/trade-pages/DemoTrading/DemoTrading";
 import DemotradingDemo from "../components/trade-sections/Demotrading-sections/DemotradingDemo";
 import EarnDemo from "../components/earn-sections/EarnDemo";
 import Savings from "../pages/earn-pages/EarnSavings/EarnSavings";
-import SpotTrading from "../pages/trade-pages/SpotTrading/SpotTrading";
-import TradingBots from "../pages/trade-pages/TradingBots/TradingBots";
-import APIs from "../pages/trade-pages/APIs/APIs";
-import Alpha from "../pages/trade-pages/Alpha/Alpha";
-import SclightLanding from "../pages/SclightLanding/SclightLanding";
 
 const RoutesPage = () => {
   return (
@@ -97,9 +92,19 @@ const RoutesPage = () => {
       <Route path="/DemoTrading" element={<MainLayout />}>
         <Route index element={<DemoTrading />} />
       </Route>
+
       {/* Savings Page  */}
       <Route path="/Savings" element={<MainLayout />}>
         <Route index element={<Savings />} />
+      </Route>
+
+      {/* Stakings Page  */}
+      <Route path="/Stakings" element={<MainLayout />}>
+        <Route index element={<EarnStakings />} />
+      </Route>
+      {/* Futures OverView  Page  */}
+      <Route path="/FuturesOverview" element={<MainLayout />}>
+        <Route index element={<FuturesOverview />} />
       </Route>
 
       {/* Auth */}
@@ -145,12 +150,15 @@ const RoutesPage = () => {
       </Route>
 
       {/* Demo Pages */}
+      <Route path="/LandingPageDemo" element={<LandingPageDemo />} />
       <Route path="/Demo" element={<Demo />} />
       <Route path="/AboutUsDemo" element={<AboutUsDemo />} />
       <Route path="/SupportDemo" element={<SupportDemo />} />
       <Route path="/SecurityDemo" element={<SecurityDemo />} />
       <Route path="/DemoTradingDemo" element={<DemotradingDemo />} />
       <Route path="/EarnDemo" element={<EarnDemo />} />
+      <Route path="/EarnStakingDemo" element={<EarnStakingDemo />} />
+      <Route path="/FuturesOverviewDemo" element={<FuturesOverViewDemo />} />
     </Routes>
   );
 };
