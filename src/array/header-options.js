@@ -32,13 +32,13 @@ export const getNavItems = (t, {
           iconColor: "#06b6d4",
           path: "/trade/spot",
         },
-        {
-          name: t("marginTrading"),
-          description: t("marginTradingDesc"),
-          icon: Zap,
-          iconColor: "#eab308",
-          path: "/trade/margin",
-        },
+        // {
+        //   name: t("marginTrading"),
+        //   description: t("marginTradingDesc"),
+        //   icon: Zap,
+        //   iconColor: "#eab308",
+        //   path: "/trade/margin",
+        // },
         {
           name: t("p2pTrading"),
           description: t("p2pTradingDesc"),
@@ -46,13 +46,13 @@ export const getNavItems = (t, {
           iconColor: "#f97316",
           path: "/trade/p2p",
         },
-        {
-          name: t("convertBlockTrade"),
-          description: t("convertBlockTradeDesc"),
-          icon: Repeat2,
-          iconColor: "#22c55e",
-          path: "/trade/convert-block",
-        },
+        // {
+        //   name: t("convertBlockTrade"),
+        //   description: t("convertBlockTradeDesc"),
+        //   icon: Repeat2,
+        //   iconColor: "#22c55e",
+        //   path: "/trade/convert-block",
+        // },
         {
           name: t("demoTrading"),
           description: t("demoTradingDesc"),
@@ -62,13 +62,13 @@ export const getNavItems = (t, {
         },
       ],
       advanced: [
-        {
-          name: t("dex"),
-          description: t("dexDesc"),
-          icon: LayoutDashboard,
-          iconColor: "#8b5cf6",
-          path: "/trade/dex",
-        },
+        // {
+        //   name: t("dex"),
+        //   description: t("dexDesc"),
+        //   icon: LayoutDashboard,
+        //   iconColor: "#8b5cf6",
+        //   path: "/trade/dex",
+        // },
         {
           name: t("alpha"),
           description: t("alphaDesc"),
@@ -83,13 +83,13 @@ export const getNavItems = (t, {
           iconColor: "#f43f5e",
           path: "/trade/bots",
         },
-        {
-          name: t("copyTrading"),
-          description: t("copyTradingDesc"),
-          icon: Users,
-          iconColor: "#3b82f6",
-          path: "/trade/copy-trading",
-        },
+        // {
+        //   name: t("copyTrading"),
+        //   description: t("copyTradingDesc"),
+        //   icon: Users,
+        //   iconColor: "#3b82f6",
+        //   path: "/trade/copy-trading",
+        // },
         {
           name: t("apis"),
           description: t("apisDesc"),

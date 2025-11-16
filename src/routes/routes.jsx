@@ -37,12 +37,22 @@ import DemoTrading from "../pages/trade-pages/DemoTrading/DemoTrading";
 import DemotradingDemo from "../components/trade-sections/Demotrading-sections/DemotradingDemo";
 import EarnDemo from "../components/earn-sections/EarnDemo";
 import Savings from "../pages/earn-pages/EarnSavings/EarnSavings";
+import SpotTrading from "../pages/trade-pages/SpotTrading/SpotTrading";
+import TradingBots from "../pages/trade-pages/TradingBots/TradingBots";
+import APIs from "../pages/trade-pages/APIs/APIs";
+import Alpha from "../pages/trade-pages/Alpha/Alpha";
+import SclightLanding from "../pages/SclightLanding/SclightLanding";
 
 const RoutesPage = () => {
   return (
     <Routes>
       {/* Sign In */}
-      <Route path="/" element={<SignInPage />} />
+      <Route path="/SignIn" element={<SignInPage />} />
+
+      {/* Main Landing Page */}
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<SclightLanding />} />
+      </Route>
       
       {/* Landing Page */}
       <Route path="/landing" element={<MainLayout />}>
@@ -61,8 +71,11 @@ const RoutesPage = () => {
       
       {/* Trading pages */}
       <Route path="/trade" element={<MainLayout />}>
-        {/* <Route path="spot" element={<Spot />} /> */}
         <Route path="p2p" element={<P2PTrading />} />
+        <Route path="spot" element={<SpotTrading />} />
+        <Route path="bots" element={<TradingBots />} />
+        <Route path="apis" element={<APIs />} />
+        <Route path="alpha" element={<Alpha />} />
       </Route>
       
       {/* About Page  */}

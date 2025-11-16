@@ -6,11 +6,26 @@ import { Twitter, Instagram, Send, Facebook, Linkedin, Youtube, Github } from "l
 const Footer = () => {
   const { t } = useTranslation();
 
-  const communityLinks = t('footer.communityLinks', { returnObjects: true }) || [];
-  const aboutLinks = t('footer.aboutLinks', { returnObjects: true }) || [];
-  const productLinks = t('footer.productLinks', { returnObjects: true }) || [];
-  const businessLinks = t('footer.businessLinks', { returnObjects: true }) || [];
-  const supportLinks = t('footer.supportLinks', { returnObjects: true }) || [];
+  // FIX: ensure the returned value is always an array
+  const communityLinks = Array.isArray(t('footer.communityLinks', { returnObjects: true })) 
+    ? t('footer.communityLinks', { returnObjects: true }) 
+    : [];
+
+  const aboutLinks = Array.isArray(t('footer.aboutLinks', { returnObjects: true })) 
+    ? t('footer.aboutLinks', { returnObjects: true }) 
+    : [];
+
+  const productLinks = Array.isArray(t('footer.productLinks', { returnObjects: true })) 
+    ? t('footer.productLinks', { returnObjects: true }) 
+    : [];
+
+  const businessLinks = Array.isArray(t('footer.businessLinks', { returnObjects: true })) 
+    ? t('footer.businessLinks', { returnObjects: true }) 
+    : [];
+
+  const supportLinks = Array.isArray(t('footer.supportLinks', { returnObjects: true })) 
+    ? t('footer.supportLinks', { returnObjects: true }) 
+    : [];
 
   const communityIcons = [
     <Twitter className="w-5 h-5" />,
@@ -25,7 +40,9 @@ const Footer = () => {
   return (
     <footer className="bg-card border-t border-custom-border py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+          {/* COMMUNITY */}
           <div>
             <h3 className="font-bold mb-4 text-lg text-dispute-color">{t('footer.community')}</h3>
             <ul className="flex space-x-4 text-secondary-desc">
@@ -39,6 +56,7 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* ABOUT */}
           <div>
             <h3 className="font-bold mb-4 text-lg text-dispute-color">{t('footer.aboutUs')}</h3>
             <ul className="space-y-3 text-sm text-secondary-desc">
@@ -50,6 +68,7 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* PRODUCTS */}
           <div>
             <h3 className="font-bold mb-4 text-lg text-dispute-color">{t('footer.products')}</h3>
             <ul className="space-y-3 text-sm text-secondary-desc">
@@ -61,6 +80,7 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* BUSINESS */}
           <div>
             <h3 className="font-bold mb-4 text-lg text-dispute-color">{t('footer.business')}</h3>
             <ul className="space-y-3 text-sm text-secondary-desc">
@@ -72,6 +92,7 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* SUPPORT */}
           <div>
             <h3 className="font-bold mb-4 text-lg text-dispute-color">{t('footer.support')}</h3>
             <ul className="space-y-3 text-sm text-secondary-desc">
@@ -86,30 +107,19 @@ const Footer = () => {
 
         <div className="border-t border-custom-border pt-8">
           <div className="flex flex-col space-y-6">
+
+            {/* SOCIAL ICONS */}
             <div className="flex justify-center items-center space-x-6 text-secondary-desc">
-              <a href="#" className="hover:text-accent transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="hover:text-accent transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="hover:text-accent transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="hover:text-accent transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="hover:text-accent transition-colors">
-                <Youtube className="w-5 h-5" />
-              </a>
-              <a href="#" className="hover:text-accent transition-colors">
-                <Github className="w-5 h-5" />
-              </a>
-              <a href="#" className="hover:text-accent transition-colors">
-                <Send className="w-5 h-5" />
-              </a>
+              <a href="#" className="hover:text-accent transition-colors"><Twitter className="w-5 h-5" /></a>
+              <a href="#" className="hover:text-accent transition-colors"><Facebook className="w-5 h-5" /></a>
+              <a href="#" className="hover:text-accent transition-colors"><Instagram className="w-5 h-5" /></a>
+              <a href="#" className="hover:text-accent transition-colors"><Linkedin className="w-5 h-5" /></a>
+              <a href="#" className="hover:text-accent transition-colors"><Youtube className="w-5 h-5" /></a>
+              <a href="#" className="hover:text-accent transition-colors"><Github className="w-5 h-5" /></a>
+              <a href="#" className="hover:text-accent transition-colors"><Send className="w-5 h-5" /></a>
             </div>
-            
+
+            {/* COPYRIGHT + LINKS */}
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="flex items-center space-x-3">
                 <div className="w-7 h-7 rounded-full flex items-center justify-center">
@@ -117,14 +127,17 @@ const Footer = () => {
                 </div>
                 <span className="text-sm text-secondary-desc">{t('footer.copyright')}</span>
               </div>
+
               <div className="flex items-center space-x-6 text-sm text-secondary-desc">
                 <a href="#" className="hover:text-accent transition-colors">{t('footer.privacy')}</a>
                 <a href="#" className="hover:text-accent transition-colors">{t('footer.terms')}</a>
                 <a href="#" className="hover:text-accent transition-colors">{t('footer.cookie')}</a>
               </div>
             </div>
+
           </div>
         </div>
+
       </div>
     </footer>
   );

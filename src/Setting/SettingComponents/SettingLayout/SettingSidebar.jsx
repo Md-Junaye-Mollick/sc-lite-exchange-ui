@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 
 const menuItems = [
-  { path: "/dashboard", name: "Dashboard", icon: LayoutDashboard },
+  { path: "/setting/dashboard", name: "Dashboard", icon: LayoutDashboard },
   {
     name: "Assets", icon: Package, sub: [
       { path: "/assets/overview", name: "Overview" },

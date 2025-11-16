@@ -27,7 +27,8 @@ const BuySellHero = () => {
   const [fiatSearch, setFiatSearch] = useState('');
   const [cryptoSearch, setCryptoSearch] = useState('');
 
-  const cryptoData = t('buySell.cryptoList', { returnObjects: true });
+  const cryptoDataRaw = t('buySell.cryptoList', { returnObjects: true });
+  const cryptoData = Array.isArray(cryptoDataRaw) ? cryptoDataRaw : [];
 
   const filteredCurrencies = currencies.filter(c =>
     c.code.toLowerCase().includes(fiatSearch.toLowerCase()) ||

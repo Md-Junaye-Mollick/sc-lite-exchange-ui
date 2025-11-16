@@ -43,12 +43,13 @@ const StatsSection = () => {
   const { t } = useTranslation();
   
   const statsData = t('stats.items', { returnObjects: true }) || [];
+  const statsArray = Array.isArray(statsData) ? statsData : [];
 
   return (
     <section className="bg-sub-card border-b border-t border-custom-border py-12 sm:py-16 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-          {statsData.map((stat, idx) => {
+          {statsArray.map((stat, idx) => {
             const icons = [Users, BarChart3, Bitcoin, Globe];
             const Icon = icons[idx];
             

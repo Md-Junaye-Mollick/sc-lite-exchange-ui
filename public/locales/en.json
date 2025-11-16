@@ -932,5 +932,663 @@
     "sellBtn": "Sell",
     "high24h": "24h High",
     "low24h": "24h Low"
+  },
+  "howP2PWorks": {
+    "title": "Trade USDT Easily - Buy and Sell Using Your Favorite Payment Methods",
+    "subtitle": "Exchange USDT on SC-Lite P2P. Find the best offers below to Buy and Sell Tether",
+    "sectionTitle": "How P2P Works",
+    "buyCrypto": "Buy Crypto",
+    "sellCrypto": "Sell Crypto",
+    "buySteps": [
+      {
+        "title": "1. Place an Order",
+        "description": "Once you place a P2P order, the crypto asset will be escrowed by SC-Lite P2P."
+      },
+      {
+        "title": "2. Pay the Seller",
+        "description": "Send money to the seller via the suggested payment methods. Complete the fiat transaction and click \"Transferred, notify seller\" on SC-Lite P2P."
+      },
+      {
+        "title": "3. Receive Crypto",
+        "description": "Once the seller confirms receipt of money, the escrowed crypto will be released to you."
+      }
+    ],
+    "sellSteps": [
+      {
+        "title": "1. Place an Order",
+        "description": "After you place an order, your crypto will be escrowed by SC-Lite P2P."
+      },
+      {
+        "title": "2. Verify Payment",
+        "description": "Check the transaction record in the given payment account, and make sure you receive the money sent by the buyer."
+      },
+      {
+        "title": "3. Release Crypto",
+        "description": "Once you confirm the receipt of money, release crypto to the buyer on SC-Lite P2P."
+      }
+    ]
+  },
+  "advantagesP2P": {
+    "title": "Advantages of P2P Exchange",
+    "advantages": [
+      {
+        "title": "Global and Local Marketplace",
+        "description": "Where as many other P2P platforms target specific markets, SC-Lite P2P provides a truly global trading experience with support for more than 70 local currencies."
+      },
+      {
+        "title": "Flexible Payment Methods",
+        "description": "Trusted by millions of users worldwide, SC-Lite P2P provides a safe platform to conduct crypto trades in 800+ payment methods and 100+ fiat currencies. Users can easily buy, sell and trade crypto directly with other users, while setting their preferred prices and payment methods in an open crypto marketplace."
+      },
+      {
+        "title": "Trade at Your Preferred Prices",
+        "description": "Trade crypto with the freedom to buy and sell at your preferred prices. Buy or sell from the existing offers, or create trade advertisements to set your own prices."
+      }
+    ]
+  },
+  "p2pBlog": {
+    "title": "P2P Blog",
+    "viewMore": "View more",
+    "blogs": [
+      {
+        "title": "Common P2P Scams in developing countries and How to Avoid Them",
+        "description": "At SC-Lite P2P, we take the security of our users very seriously. As such, we want to make sure you're aware of the most common P2P scams as well as how to avoid them.",
+        "date": "2023-06-07",
+        "image": "red"
+      },
+      {
+        "title": "SC-Lite P2P: Important Do's and Don'ts to Avoid Getting Blacklisted",
+        "description": "Follow these guidelines to avoid getting your account banned from SC-Lite P2P.",
+        "date": "2023-05-26",
+        "image": "pink"
+      },
+      {
+        "title": "What Is SC-Lite P2P's Verified Merchant Feature and How to Join?",
+        "description": "P2P trading can be unpleasant with an unknown counterparty. Discover the benefits of becoming and trading with a verified merchant on SC-Lite P2P instead.",
+        "date": "2023-04-27",
+        "image": "blue"
+      }
+    ]
+  },
+  "paymentMethods": {
+    "title": "Top Payment Methods",
+    "methods": [
+      {
+        "name": "UPI",
+        "color": "gray"
+      },
+      {
+        "name": "IMPS",
+        "color": "orange"
+      },
+      {
+        "name": "Bank Transfer (India)",
+        "color": "yellow"
+      },
+      {
+        "name": "Digital eRupee",
+        "color": "blue"
+      },
+      {
+        "name": "Google Pay (GPay)",
+        "color": "blue"
+      },
+      {
+        "name": "PhonePe",
+        "color": "purple"
+      },
+      {
+        "name": "Paytm",
+        "color": "blue"
+      },
+      {
+        "name": "IMPS - PAN",
+        "color": "orange"
+      },
+      {
+        "name": "Lightning UPI",
+        "color": "yellow"
+      }
+    ]
+  },
+  "p2pFaqs": {
+    "title": "FAQs",
+    "tabs": [
+      { "id": "beginner", "label": "Beginner" },
+      { "id": "advanced", "label": "Advanced" },
+      { "id": "advertisers", "label": "Advertisers" }
+    ],
+    "beginner": [
+      { "question": "What is P2P exchange?", "answer": "P2P exchange is a marketplace where users trade cryptocurrencies directly with each other without intermediaries.", "type": "expandable" },
+      { "question": "How do I sell Bitcoin locally on SC-Lite P2P?", "answer": "Go to P2P page → Select Sell → Choose Bitcoin → Enter amount → Select payment method → Confirm order → Wait for payment → Release Bitcoin.", "type": "expandable" },
+      { "question": "Which cryptocurrencies are supported in the P2P trade zone?", "answer": "BTC, ETH, USDT, BUSD, BNB and many other popular tokens. Availability varies by region.", "type": "expandable" },
+      { "question": "Glossary of P2P trading terms", "type": "link" },
+      { "question": "How to add new payment methods on SC-Lite P2P?", "type": "link" },
+      { "question": "How do I buy Bitcoin locally on SC-Lite P2P?", "answer": "Navigate to P2P → Click Buy → Select Bitcoin → Browse offers → Enter amount → Make payment → Mark complete → Wait for release.", "type": "expandable" },
+      { "question": "Why is SC-Lite P2P better than other P2P marketplaces?", "answer": "Zero fees, fast transactions, escrow protection, multiple payment methods, 24/7 support, large user base, multi-language support.", "type": "expandable" },
+      { "question": "How do I protect myself against fraud? SC-Lite P2P Escrow FTW!", "answer": "Use escrow protection, verify payments carefully, check user ratings, communicate via chat, report suspicious activity, never trade outside platform.", "type": "expandable" },
+      { "question": "SC-Lite P2P trading FAQ", "type": "link" },
+      { "question": "P2P user transaction policy", "type": "link" }
+    ],
+    "advanced": [
+      { "question": "How to set up price formulas for P2P ads?", "answer": "Use percentage-based formulas above/below market price or fixed prices with dynamic adjustments for automated pricing.", "type": "expandable" },
+      { "question": "What are the trading limits on SC-Lite P2P?", "answer": "Limits vary by verification level and payment method. Complete KYC to increase your trading limits.", "type": "expandable" },
+      { "question": "How to manage multiple payment methods?", "answer": "Add and verify multiple payment methods in settings. Enable/disable them per ad for flexibility.", "type": "expandable" },
+      { "question": "Understanding P2P order appeal process", "answer": "If issues arise, open an appeal within the order window. Provide evidence and our team will review and resolve.", "type": "expandable" },
+      { "question": "How to filter and block users?", "answer": "Use the block feature to prevent specific users from seeing or trading with your ads.", "type": "expandable" },
+      { "question": "Setting up automatic replies for P2P orders", "answer": "Configure auto-reply messages to inform buyers about your payment process and requirements.", "type": "expandable" },
+      { "question": "Advanced P2P trading strategies", "type": "link" },
+      { "question": "P2P order completion tips", "type": "link" },
+      { "question": "Managing P2P trading risks", "type": "link" },
+      { "question": "P2P trading best practices guide", "type": "link" }
+    ],
+    "advertisers": [
+      { "question": "How do I become a P2P merchant?", "answer": "Complete KYC verification, maintain good trading volume and completion rate. Apply via merchant application page.", "type": "expandable" },
+      { "question": "What are the benefits of being a merchant?", "answer": "Higher visibility, ability to create ads, merchant support access, higher trading volumes and profit potential.", "type": "expandable" },
+      { "question": "How to create effective P2P advertisements?", "answer": "Set competitive prices, offer multiple payment methods, write clear terms, maintain high completion rates.", "type": "expandable" },
+      { "question": "Managing ad visibility and positioning", "answer": "Keep ads active, maintain fast response times, complete trades quickly to improve your ad ranking.", "type": "expandable" },
+      { "question": "Understanding merchant fees and commissions", "answer": "Review the fee structure for merchants. Zero trading fees apply, but understand payment processing costs.", "type": "expandable" },
+      { "question": "How to handle high-volume P2P trading?", "answer": "Use multiple payment accounts, set appropriate limits, maintain sufficient crypto balance, monitor orders regularly.", "type": "expandable" },
+      { "question": "P2P merchant verification requirements", "type": "link" },
+      { "question": "Merchant dashboard and analytics", "type": "link" },
+      { "question": "P2P advertising guidelines and policies", "type": "link" },
+      { "question": "Merchant support and resources", "type": "link" }
+    ]
+  },
+  "tradingBotsPage": {
+    "title": "Trading Bots",
+    "totalBalance": "Total Balance",
+    "todayPNL": "Today's PNL",
+    "tradeNow": "Trade Now",
+    "botsWallet": "Bots Wallet",
+    "learnMore": "Learn More",
+    "slides": [
+      {
+        "title": "Discover Our Trading Bots",
+        "description": "Automate your trading strategy with AI-powered bots"
+      },
+      {
+        "title": "Smart Trading Solutions",
+        "description": "Advanced algorithms for optimal performance"
+      },
+      {
+        "title": "24/7 Trading",
+        "description": "Never miss an opportunity in the market"
+      }
+    ]
+  },
+  "tradingBotsCard": {
+    "tabs": {
+      "all": "All",
+      "algos": "Algos",
+      "sideways": "Sideways",
+      "bullish": "Bullish",
+      "bearish": "Bearish"
+    },
+    "dailyPicks": "Daily Picks",
+    "bots": {
+      "spotGrid": {
+        "title": "Spot Grid",
+        "description": "Buy low and sell high. 24/7 availability."
+      },
+      "futuresGrid": {
+        "title": "Futures Grid",
+        "description": "Automate your longs and shorts"
+      },
+      "futuresDCA": {
+        "title": "Futures DCA",
+        "description": "Auto-scale positions, turn losses to gains."
+      },
+      "arbitrageBot": {
+        "title": "Arbitrage Bot",
+        "description": "Delta neutral strategy to earn Funding Fee effortlessly"
+      },
+      "rebalancingBot": {
+        "title": "Rebalancing Bot",
+        "description": "Smart strategy for a multi-coin portfolio"
+      },
+      "spotDCA": {
+        "title": "Spot DCA",
+        "description": "Lower average entry cost, profit from reversals"
+      },
+      "algoOrder": {
+        "title": "Algo Order",
+        "description": "Enhance execution of large orders in smaller blocks."
+      },
+      "futuresTWAP": {
+        "title": "Futures TWAP",
+        "description": "Reduce execution costs by splitting orders"
+      },
+      "futuresVP": {
+        "title": "Futures VP",
+        "description": "Split large order among specific urgency levels"
+      }
+    }
+  },
+  "botMarketplace": {
+    "title": "Bot Marketplace",
+    "spotGrid": "Spot Grid",
+    "futuresGrid": "Futures Grid",
+    "arbitrage": "Arbitrage",
+    "copy": "Copy",
+    "pnl": "PNL (USD)",
+    "roi": "ROI",
+    "runtime": "Runtime",
+    "minInvestment": "Min. Investment",
+    "matchedTrades": "24h/Total Matched Trades",
+    "mdd": "7D MDD",
+    "topPNL": "Top PNL",
+    "market": "Market",
+    "days": "1-7 Days",
+    "create": "Create",
+    "apr": "APR",
+    "spreadRate": "Spread Rate",
+    "nextFunding": "Next Funding",
+    "countdown": "Countdown",
+    "search": "Search"
+  },
+  "botfeatures": {
+    "title": "Features",
+    "cards": [
+      {
+        "title": "Intuitive Automation",
+        "description": "Set up your algorithmic bot and automate your orders in a few clicks with TWAP, VP algos, and Grid trading."
+      },
+      {
+        "title": "Trending strategies",
+        "description": "Replicate and customize the most profitable Grid Trading strategies across a wide range of trading pairs."
+      },
+      {
+        "title": "Deep Liquidity",
+        "description": "Optimize order executions and reduce slippage while capturing market trends on the largest exchange."
+      }
+    ]
+  },
+  "botAcademy": {
+    "title": "Bots Academy",
+    "learnMore": "Learn More",
+    "tabs": {
+      "tradingEssentials": "Trading Bot Essentials",
+      "spotGrid": "Spot Grid",
+      "futuresGrid": "Futures Grid",
+      "futuresDCA": "Futures DCA",
+      "arbitrage": "Arbitrage",
+      "rebalancingBot": "Rebalancing Bot",
+      "spotDCA": "Spot DCA",
+      "algoOrder": "Algo Order"
+    },
+    "articles": [
+      {
+        "title": "What Is Futures Grid Trading",
+        "description": "Futures Grid trading performs the best in volatile and sideways markets when prices fluctuate in a given..."
+      },
+      {
+        "title": "What Is Long/Short Grid Trading",
+        "description": "Long/Short Grid is a trend-following strategy that allows users to trade with the market trend within a gr..."
+      },
+      {
+        "title": "Futures Grid Trading Auto Parameters Guide",
+        "description": "SC-Lite provides recommended parameters to help improve user experience and reduce the learning..."
+      },
+      {
+        "title": "Trading Bots Disclaimers",
+        "description": "The Trading Bots Disclaimers are inseparable parts of our SC-Lite Terms of Use and SC-Lite Futures Servic..."
+      },
+      {
+        "title": "How to use the Trading Bots Landing Page",
+        "description": "The new landing page provides users with a comprehensive display of Spot and Futures Grid..."
+      },
+      {
+        "title": "Benefits of Grid Trading on SC-Lite Futures",
+        "description": "Grid trading is one of the features on SC-Lite Futures to help users trade on the cryptocurrency market. It is..."
+      }
+    ]
+  },
+  "botFaq": {
+    "title": "FAQ",
+    "questions": [
+      {
+        "question": "What Is Spot Grid Trading and How Does it Work",
+        "answer": "Grid trading is a type of quantitative trading strategy. This trading bot automates buying and selling on spot trading. It is designed to place orders in the market at preset intervals within a configured price range. Read more in our FAQ"
+      },
+      {
+        "question": "How to Create a Spot Grid Trading Strategy on SC-Lite",
+        "answer": "To create a Spot Grid Trading strategy, navigate to the Trading Bots section, select Spot Grid, configure your parameters including price range, number of grids, and investment amount, then activate the bot."
+      },
+      {
+        "question": "How to Use Spot Grid Trading Auto Parameters",
+        "answer": "Auto Parameters feature automatically suggests optimal settings based on market conditions. Simply select the Auto Parameters option when setting up your grid bot, and the system will recommend price ranges and grid quantities."
+      },
+      {
+        "question": "SC-Lite Spot Grid Trading Parameters",
+        "answer": "Key parameters include upper and lower price limits, number of grids, investment amount, and arithmetic or geometric progression. These settings determine how your bot will execute trades within the specified range."
+      },
+      {
+        "question": "How to use the Strategy Trading Landing Page",
+        "answer": "The Strategy Trading Landing Page provides an overview of all available trading bots, performance metrics, and quick access to create or manage your strategies. Navigate through different bot types and view detailed analytics."
+      },
+      {
+        "question": "What Is Futures Grid Trading",
+        "answer": "Futures Grid Trading is similar to Spot Grid but operates on futures markets with leverage. It allows you to trade with borrowed funds and can profit from both rising and falling markets."
+      },
+      {
+        "question": "What Is Long/Short Grid Trading",
+        "answer": "Long/Short Grid Trading enables you to set directional bias. Long Grid profits from upward trends, Short Grid profits from downward trends, while Neutral Grid works in ranging markets."
+      },
+      {
+        "question": "Futures Grid Trading Auto Parameters Guide",
+        "answer": "Auto Parameters for Futures Grid considers volatility, leverage, and market trends to suggest optimal settings. It helps reduce risk while maximizing potential returns based on current market conditions."
+      },
+      {
+        "question": "How to Use TWAP Algorithm on SC-Lite Futures",
+        "answer": "Time-Weighted Average Price (TWAP) algorithm splits large orders into smaller chunks executed over time, reducing market impact and achieving better average prices for your trades."
+      },
+      {
+        "question": "How to Use Volume Participation Algorithm on SC-Lite Future",
+        "answer": "Volume Participation algorithm executes orders based on market volume patterns, ensuring your trades blend with natural market flow and minimize price impact."
+      },
+      {
+        "question": "Strategy Trading Disclaimers",
+        "answer": "Trading bots carry risks including market volatility, technical failures, and potential losses. Past performance doesn't guarantee future results. Always understand the risks and invest responsibly."
+      },
+      {
+        "question": "What Is Rebalancing Bot and Frequently Asked Questions",
+        "answer": "Rebalancing Bot automatically adjusts your portfolio allocation to maintain target percentages. It helps manage risk and optimize returns by periodically rebalancing your crypto holdings."
+      },
+      {
+        "question": "What are Algorithmic Orders? TWAP and POV Strategies Explained",
+        "answer": "Algorithmic orders use advanced execution strategies like TWAP (Time-Weighted Average Price) and POV (Percentage of Volume) to optimize trade execution, reduce slippage, and minimize market impact."
+      }
+    ]
+  },
+  "apiHeader": {
+    "title": "SC-Lite API",
+    "subtitle": "Unlimited Opportunities with One Key."
+  },
+  "apiConnectivity": {
+    "title": "Trading Connectivity",
+    "description": "We offer access to Spot, Margin, Futures, and Options API trading for over 300 digital and fiat currencies. API trading provides a testing environment, API documentation, and sample code in multiple programming languages. Suitable for all your trading needs.",
+    "flow": {
+      "user": "User",
+      "createKey": "Create/Manage API Key",
+      "api": "API",
+      "deployApi": "Deploy API",
+      "connect": "Connect",
+      "ecosystem": "SC-Lite Ecosystem"
+    },
+    "spotTrading": {
+      "title": "Spot Trading",
+      "spot": "Spot",
+      "margin": "Margin",
+      "convert": "Convert",
+      "spotAlgo": "Spot Algo"
+    },
+    "derivativesTrading": {
+      "title": "Derivatives Trading",
+      "usdm": "USD⊖-M",
+      "coinm": "COIN-M",
+      "vanilla": "Vanilla Options",
+      "futures": "Futures Algo"
+    },
+    "marketData": {
+      "title": "Market Data",
+      "description": "Market Data at your fingertips with SC-Lite API and Websocket Services",
+      "data": "Market Data",
+      "websocket": "Websocket"
+    },
+    "investment": {
+      "title": "Investment & Services",
+      "description": "Manage and grow your digital wealth all in one place.",
+      "wallet": "Wallet",
+      "simpleEarn": "Simple Earn",
+      "mining": "Mining",
+      "c2c": "C2C",
+      "fiat": "Fiat",
+      "ethStaking": "ETH Staking",
+      "cryptoLoan": "Crypto Loan"
+    }
+  },
+  "vipInstitutional": {
+    "title": "VIP & Institutional",
+    "description": "SC-Lite VIP and Institutional offers access to professional services including better fees, higher trading limits, flexible account management function and OTC services. Our experienced team works closely with a wide range of market participants to provide bespoke trading solutions.",
+    "subAccount": "Sub Account",
+    "taxReport": "TAX Report API",
+    "learnMore": "Learn More"
+  },
+  "linkProgram": {
+    "title": "Link Program",
+    "description": "SC-Lite Link Program enables enterprise clients to build their business with SC-Lite technology while earning commission from trading fees by leveraging SC-Lite's liquidity and market depth.",
+    "features": {
+      "liquidity": "Liquidity",
+      "linkSubAccount": "Link Sub Account",
+      "fiatGateway": "Fiat Gateway",
+      "rebates": "Rebates"
+    },
+    "flow": {
+      "ecosystem": "SC-Lite Ecosystem",
+      "liquidityTrading": "Liquidity & Trading Integration",
+      "rebateVolume": "Rebate on Volume",
+      "linkClient": "Link Client"
+    },
+    "learnMore": "Learn More"
+  },
+  "developers": {
+    "title": "Made for Developers",
+    "description": "Facing a problem in development? Find help from the developer community. We would like to hear from you! Share your thoughts with us.",
+    "devForum": "Dev Forum",
+    "devTelegram": "Dev Telegram",
+    "feedbackSurvey": "Feedback Survey"
+  },
+  "apiFaq": {
+    "title": "FAQ",
+    "viewMore": "View More",
+    "questions": [
+      {
+        "question": "How to create API key?",
+        "answer": "To create an API key, log in to your SC-Lite account, navigate to API Management in your account settings, and click 'Create API'. Follow the security prompts to generate your key. Make sure to save your secret key securely as it will only be shown once."
+      },
+      {
+        "question": "Is there an API Documentation?",
+        "answer": "Yes, comprehensive API documentation is available on our developer portal. It includes detailed endpoint descriptions, request/response examples, authentication guides, and code samples in multiple programming languages to help you integrate quickly."
+      },
+      {
+        "question": "Does SC-Lite provide a Testing or Demo environment?",
+        "answer": "Yes, SC-Lite provides a testnet environment where you can test your API integrations without using real funds. The testnet mirrors the production environment's functionality, allowing you to develop and debug your applications safely before going live."
+      },
+      {
+        "question": "Can I use other languages(such as Python or Java) with SC-Lite API?",
+        "answer": "Absolutely! Our API is RESTful and language-agnostic. You can use any programming language that supports HTTP requests. We provide official SDKs and code examples for popular languages including Python, Java, JavaScript, C#, and more on our GitHub repository."
+      },
+      {
+        "question": "Where can I find more information?",
+        "answer": "You can find more information in our comprehensive documentation portal, developer community forum, and official blog. For technical support, join our developer Telegram group or submit a ticket through our support center. We also regularly host webinars and publish tutorials on our YouTube channel."
+      }
+    ]
+  },
+  "SChero": {
+    "badge": "Lightning Fast Trading Platform",
+    "activeTraders": "Active Traders Worldwide",
+    "title1": "Trade Smarter,",
+    "title2": "Trade Faster",
+    "description": "Experience next-generation trading with AI-powered insights, real-time analytics, and lightning-fast execution. Your gateway to financial freedom.",
+    "startTrading": "Start Trading Now",
+    "watchDemo": "Watch Demo",
+    "stats": {
+      "tradingVolume": "Trading Volume",
+      "tradingPairs": "Trading Pairs",
+      "liveSupport": "Live Support"
+    },
+    "aiInsights": "AI-Powered Insights",
+    "aiDescription": "Real-time market analysis with machine learning predictions"
+  },
+  "marquee": {
+    "zeroFees": "Zero Trading Fees",
+    "instantWithdrawals": "Instant Withdrawals",
+    "support": "24/7 Customer Support",
+    "security": "Bank-Grade Security"
+  },
+  "mobile": {
+    "badge": "📱 Mobile Experience",
+    "title1": "Trade",
+    "title2": "Anywhere",
+    "title3": ", Anytime",
+    "description": "Your complete trading platform in your pocket. Seamless experience across all devices.",
+    "dashboard": {
+      "title": "Dashboard",
+      "subtitle": "Track your portfolio",
+      "totalBalance": "Total Balance",
+      "today": "Today"
+    },
+    "trading": {
+      "title": "Live Trading",
+      "subtitle": "Real-time execution",
+      "change24h": "24h Change",
+      "volume": "Volume",
+      "buy": "BUY",
+      "sell": "SELL"
+    },
+    "analytics": {
+      "title": "Analytics",
+      "subtitle": "AI-powered insights",
+      "successRate": "Success Rate",
+      "winRate": "Win Rate",
+      "profitMargin": "Profit Margin"
+    }
+  },
+  "SCfeatures": {
+    "badge": "⚡ Core Features",
+    "title1": "Why Choose",
+    "title2": "Sclight",
+    "subtitle": "Built for traders who demand speed, security, and sophistication",
+    "items": [
+      {
+        "title": "Lightning Speed",
+        "description": "Execute trades in milliseconds with our cutting-edge infrastructure and advanced order matching"
+      },
+      {
+        "title": "Bank-Level Security",
+        "description": "Multi-layer security with military-grade encryption, cold storage and insurance fund protection"
+      },
+      {
+        "title": "AI Analytics",
+        "description": "Machine learning powered market predictions and real-time sentiment analysis for smarter trading"
+      },
+      {
+        "title": "Mobile First",
+        "description": "Trade seamlessly across all your devices with native apps for iOS and Android"
+      }
+    ]
+  },
+  "SCstats": {
+    "title1": "Trusted by",
+    "title2": "Millions",
+    "subtitle": "Join the fastest growing trading community",
+    "items": {
+      "traders": "Active Traders",
+      "volume": "Trading Volume",
+      "countries": "Countries",
+      "uptime": "Uptime"
+    }
+  },
+  "platform": {
+    "badge": "🚀 Platform",
+    "title1": "Complete",
+    "title2": "Trading Solution",
+    "subtitle": "Everything you need to succeed in one powerful platform",
+    "items": [
+      {
+        "title": "Advanced Order Types",
+        "description": "Limit, market, stop-loss, trailing stop, and iceberg orders with one-click execution"
+      },
+      {
+        "title": "Deep Liquidity Pools",
+        "description": "Access to the deepest order books across 200+ trading pairs with minimal slippage"
+      },
+      {
+        "title": "Real-time Charts",
+        "description": "Professional charting tools with 50+ technical indicators and drawing tools"
+      },
+      {
+        "title": "API Integration",
+        "description": "REST and WebSocket APIs for algorithmic trading and custom integrations"
+      }
+    ]
+  },
+  "SCtestimonials": {
+    "badge": "💬 Testimonials",
+    "title1": "What",
+    "title2": "Traders Say",
+    "subtitle": "Real feedback from our community",
+    "items": [
+      {
+        "name": "Sarah Chen",
+        "role": "Day Trader",
+        "text": "Sclight has transformed my trading experience. The speed and reliability are unmatched. I've increased my profits by 40% since switching!"
+      },
+      {
+        "name": "Michael Rodriguez",
+        "role": "Crypto Investor",
+        "text": "The AI-powered insights have given me an edge in the market. The mobile app is incredibly smooth and feature-rich."
+      },
+      {
+        "name": "Emma Thompson",
+        "role": "Professional Trader",
+        "text": "Finally, a platform that understands professional traders. Advanced tools, deep liquidity, and exceptional support."
+      }
+    ]
+  },
+  "SCsecurity": {
+    "badge": "🔒 Security First",
+    "title1": "Your Assets,",
+    "title2": "Always Protected",
+    "description": "We employ industry-leading security measures to ensure your funds and data are always safe. Trade with confidence knowing your assets are protected.",
+    "items": [
+      "Multi-signature cold wallet storage",
+      "Two-factor authentication (2FA)",
+      "Advanced DDoS protection",
+      "Regular security audits",
+      "$100M insurance fund"
+    ],
+    "stats": {
+      "score": "Security Score",
+      "scoreValue": "A+",
+      "encryption": "Encryption",
+      "encryptionValue": "256-bit",
+      "compliance": "Compliance",
+      "complianceValue": "Full",
+      "audits": "Audits",
+      "auditsValue": "Monthly"
+    }
+  },
+  "SCcta": {
+    "title1": "Ready to",
+    "title2": "Start Trading",
+    "description": "Join millions of traders worldwide and experience the future of trading. Start your journey with Sclight today.",
+    "createAccount": "Create Free Account",
+    "learnMore": "Learn More",
+    "note": "No credit card required • Start trading in minutes"
+  },
+  "SCfaq": {
+    "badge": "❓ FAQ",
+    "title1": "Got",
+    "title2": "Questions",
+    "subtitle": "We've got answers",
+    "items": [
+      {
+        "question": "How do I get started with Sclight?",
+        "answer": "Simply sign up for a free account, complete the verification process, and you can start trading within minutes. No minimum deposit required."
+      },
+      {
+        "question": "What are the trading fees?",
+        "answer": "We offer competitive fees starting at 0.1% per trade. Volume-based discounts are available for active traders."
+      },
+      {
+        "question": "Is my money safe on Sclight?",
+        "answer": "Absolutely. We use bank-grade security, cold storage for 95% of funds, and maintain a $100M insurance fund."
+      },
+      {
+        "question": "Can I trade on mobile?",
+        "answer": "Yes! Our mobile apps for iOS and Android offer the full trading experience with a seamless interface."
+      }
+    ]
   }
 }
