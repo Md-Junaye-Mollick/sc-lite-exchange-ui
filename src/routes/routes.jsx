@@ -37,6 +37,16 @@ import DemoTrading from "../pages/trade-pages/DemoTrading/DemoTrading";
 import DemotradingDemo from "../components/trade-sections/Demotrading-sections/DemotradingDemo";
 import EarnDemo from "../components/earn-sections/EarnDemo";
 import Savings from "../pages/earn-pages/EarnSavings/EarnSavings";
+import SpotTrading from "../pages/trade-pages/SpotTrading/SpotTrading";
+import TradingBots from "../pages/trade-pages/TradingBots/TradingBots";
+import APIs from "../pages/trade-pages/APIs/APIs";
+import Alpha from "../pages/trade-pages/Alpha/Alpha";
+import SclightLanding from "../pages/SclightLanding/SclightLanding";
+import EarnStakings from "../pages/earn-pages/EarnStakings/EarnStakings";
+import EarnStakingDemo from "../components/earn-sections/EarnStakingDemo";
+import LandingPageDemo from "../components/landing-sections/LandingPageDemo";
+import FuturesOverViewDemo from "../components/futures-sections/futures-overview-sections/FuturesOverViewDemo";
+import FuturesOverview from "../pages/FuturesOverview/FuturesOverview";
 
 const RoutesPage = () => {
   return (
